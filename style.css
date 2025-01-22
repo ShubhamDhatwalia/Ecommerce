@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.top-header {
+    background-color: #000;
+    height: 48px;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+
+.top-header .content {
+    display: flex;
+    align-items: center;
+    gap: 231px;
+    width: 100%;
+    color: #FAFAFA;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+
+}
+
+.top-header .content a {
+    color: #FAFAFA;
+    padding-left: 8px;
+    font-weight: 600;
+    line-height: 24px;
+    text-decoration-line: underline;
+
+}
+
+.top-header .right-content select {
+    background-color: #000;
+    color: #FAFAFA;
+
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+
+}
+
+.top-header .content .left-content {
+    display: flex;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 190px;
+
+}
+
+nav .logo {
+    color: #000;
+
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    /* 100% */
+    letter-spacing: 0.72px;
+}
+
+nav ul {
+    display: flex;
+    gap: 48px;
+    list-style: none;
+}
+
+nav ul a {
+    color: #000;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+}
+.main-header{
+    padding-top: 47px;
+    padding-bottom: 23px;
+}
+.main-header .right-menu {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+.main-header .right-menu .search-bar{
+    position: relative;
+}
+.main-header .right-menu .search-bar img{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+
+}
+.main-header .right-menu input {
+    padding: 7px 12px 7px 20px;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    background: #F5F5F5;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    max-width: 211px;
+    /* 150% */
+}
+
+.main-header .right-menu .wishlist-cart-menu{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
