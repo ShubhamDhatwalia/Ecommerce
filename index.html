@@ -9,60 +9,233 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
-    <header class="top-header">
-        <div class="wrapper">
-            <div class="content">
-                <div class="left-content">
+    <header class="promo-header">
+        <div class="container">
+            <div class="promo-content">
+                <div class="promo-message">
                     <p>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
-                    <a href="#">ShopNow</a>
+                    <a href="#" class="promo-link">Shop Now</a>
                 </div>
-                <div class="right-content">
-                    <select name="language" id="">
+                <div class="language-selector">
+                    <select name="language" id="language-dropdown">
                         <option value="en">English</option>
                         <option value="french">French</option>
                     </select>
                 </div>
             </div>
         </div>
-
     </header>
 
     <header class="main-header">
-        <div class="wrapper">
-            <div class="row">
-                <nav>
-                    <h1 class="logo">Exclusive</h1>
+        <div class="container">
 
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#signup">Sign Up</a></li>
+            <div class="header-content">
+                <a href="#" class="logo">Exclusive</a>
+                <nav class="main-navigation">
 
+                    <ul class="navigation-menu">
+                        <li><a href="#home" class="menu-link">Home</a></li>
+                        <li><a href="#about" class="menu-link">About</a></li>
+                        <li><a href="#contact" class="menu-link">Contact</a></li>
+                        <li><a href="#signup" class="menu-link">Sign Up</a></li>
                     </ul>
                 </nav>
-
-
-                <div class="right-menu">
+                <div class="header-actions">
                     <div class="search-bar">
-                        <input type="text" placeholder="What are you looking for?">
-                        <img src="./assests/search-icon.svg" alt="">
+                        <input type="text" placeholder="What are you looking for?" class="search-input">
+                        <img src="./assests/search-icon.svg" alt="Search Icon" class="search-icon">
                     </div>
-
-                    <div class="wishlist-cart-menu">
-
-                        <a href="#"><img src="./assests/favorite-icon.svg" alt=""></a>
-                        <a href="#"><img src="./assests/cart-icon.svg" alt=""></a>
+                    <div class="user-menu">
+                        <a href="#" class="wishlist-link"><img src="./assests/favorite-icon.svg"
+                                alt="Wishlist Icon"></a>
+                        <a href="#" class="cart-link"><img src="./assests/cart-icon.svg" alt="Cart Icon"></a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <nav class="side-nav">
+                    <ul>
+                        <li><button class="dropdown-btn">Woman’s Fashion <img src="./assests/DropDown-icon.png"
+                                    alt=""></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#jeans">Jeans</a></li>
+                                <li><a href="#shirt">Shirt</a></li>
+                            </ul>
+                        </li>
+                        <li><button class="dropdown-btn">Men’s Fashion <img src="./assests/DropDown-icon.png"
+                                    alt=""></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#jeans">Jeans</a></li>
+                                <li><a href="#shirt">Shirt</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#electronics">Electronics</a></li>
+                        <li><a href="#home-lifestyle">Home & Lifestyle</a></li>
+                        <li><a href="#medicine">Medicine</a></li>
+                        <li><a href="#sports">Sports & Outdoor</a></li>
+                        <li><a href="#baby-toy">Baby’s & Toys</a></li>
+                        <li><a href="#groceries&Pets">Groceries & Pets</a></li>
+                        <li><a href="#health&beauty">Health & Beauty</a></li>
+
+
+
+                    </ul>
+                </nav>
+
+                <div class="offers-carousel">
+                    <swiper-container class="bannerSwiper" pagination="true" pagination-clickable="true" space-between="10" autoplay-delay="2500" autoplay-disable-on-interaction="false" loop="true">
+                        <swiper-slide>
+                            <div class="slide-content">
+
+                                <p> <img src="./assests/apple-logo.svg" alt="">iPhone 14 Series</p>
+                                <h1>Up to 10% off Voucher</h1>
+                                <a href="#shopnow" class="promo-link">Shop Now <img src="./assests/arrow.png"
+                                        alt=""></a>
+
+                            </div>
+                            <img src="./assests/hero-image.jpg" alt="">
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="slide-content">
+
+                                <p> <img src="./assests/apple-logo.svg" alt="">iPhone 14 Series</p>
+                                <h1>Up to 10% off Voucher</h1>
+                                <a href="#shopnow" class="promo-link">Shop Now <img src="./assests/arrow.png"
+                                        alt=""></a>
+
+                            </div>
+                            <img src="./assests/hero-image.jpg" alt="">
+                        </swiper-slide>
+
+                        <swiper-slide>
+                            <div class="slide-content">
+
+                                <p> <img src="./assests/apple-logo.svg" alt="">iPhone 14 Series</p>
+                                <h1>Up to 10% off Voucher</h1>
+                                <a href="#shopnow" class="promo-link">Shop Now <img src="./assests/arrow.png"
+                                        alt=""></a>
+
+                            </div>
+                            <img src="./assests/hero-image.jpg" alt="">
+                        </swiper-slide>
+                       
+                    </swiper-container>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="flash-sales">
+
+        <div class="container">
+            <div class="heading">
+                <img src="./assests/headings-icon.svg" alt="">
+                <h2>Todays</h2>
+            </div>
+
+            <div class="inner-heading">
+                <div class="inner-heading-name">
+                    <h3>Flash Sales</h3>
+                    
+                </div>
+                <div class="duration">
+                   <div>
+                    <p>Days</p>
+                    <h6>03 <span class="duration-colon">:</span></h6>
+                   </div>
+
+                   <div>
+                    <p>Hours</p>
+                    <h6>23 <span class="duration-colon">:</span></h6>
+                   </div>
+
+                   <div>
+                    <p>Minutes</p>
+                    <h6>13 <span class="duration-colon">:</span></h6>
+                   </div>
+
+                   <div>
+                    <p>Seconds</p>
+                    <h6>53 <span class="duration-colon"></span></h6>
+                   </div>
+                </div>
+                
+            </div>
+
+
+            <div class="flash-sales-carousel">
+                <swiper-container class="bannerSwiper"  space-between="30"  slides-per-view="auto">
+                    <swiper-slide>
+                        <div class="item-card">
+
+                        <div class="item-img">
+                            <img src="./assests/item1.png" alt="">
+                        </div>
+
+                        <div class="item-details">
+                            <h4>HAVIT HV-G92 Gamepad</h4>
+
+                            <div class="price">
+                                <h4>$120 <span class="discounted-price">$160</span></h4>
+                            </div>
+
+                            <div class="ratting">
+                                <img src="./assests/ratting-star.svg" alt="">
+                                <p>( <span ratting-number>88</span> )</p>
+                            </div>
+                        </div>
+
+                        </div>
+                        
+                    </swiper-slide>
+                    <swiper-slide>
+                        <div class="slide-content">
+
+                            <p> <img src="./assests/apple-logo.svg" alt="">iPhone 14 Series</p>
+                            <h1>Up to 10% off Voucher</h1>
+                            <a href="#shopnow" class="promo-link">Shop Now <img src="./assests/arrow.png"
+                                    alt=""></a>
+
+                        </div>
+                        
+                    </swiper-slide>
+
+                    <swiper-slide>
+                        <div class="slide-content">
+
+                            <p> <img src="./assests/apple-logo.svg" alt="">iPhone 14 Series</p>
+                            <h1>Up to 10% off Voucher</h1>
+                            <a href="#shopnow" class="promo-link">Shop Now <img src="./assests/arrow.png"
+                                    alt=""></a>
+
+                        </div>
+                        
+                    </swiper-slide>
+                   
+                </swiper-container>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <script src="/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </body>
 
 </html>
