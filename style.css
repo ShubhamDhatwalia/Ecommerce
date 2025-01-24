@@ -7,6 +7,19 @@
     --secondary-color: #DB4444;
 }
 
+.btn {
+    color: #FAFAFA;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 16px 48px;
+    border-radius: 4px;
+    border: none;
+    background: #DB4444;
+}
 
 p {
     font-family: "Poppins", sans-serif;
@@ -295,11 +308,10 @@ a {
 
 
 .offers-carousel {
-    /* width: 100%; */
+
     position: relative;
     margin-top: 40px;
     max-width: 892px;
-
 }
 
 
@@ -312,10 +324,11 @@ swiper-slide {
     justify-content: space-between;
     align-items: center;
     background-color: #000;
+
 }
 
 swiper-slide img {
-    display: block;
+
     width: 100%;
     height: auto;
 
@@ -372,6 +385,7 @@ swiper-slide img {
 
 .flash-sales {
     margin-top: 140px;
+
 }
 
 .heading {
@@ -390,7 +404,9 @@ swiper-slide img {
     display: flex;
     align-items: end;
     gap: 87px;
+    white-space: nowrap;
     padding-top: 13px;
+    position: relative;
 }
 
 .inner-heading-name {
@@ -422,12 +438,32 @@ swiper-slide img {
     color: var(--secondary-color);
 }
 
+.carousel-controller {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    position: absolute;
+    right: 0;
+}
+
+.carousel-controller img {
+    display: block;
+
+
+}
+
+.carousel-controller img:hover {
+    cursor: pointer;
+}
+
 .flash-sales-carousel {
     margin-top: 40px;
     margin-bottom: 60px;
 }
-.flash-sales-carousel swiper-slide {
+
+.flash-sales-carousel swiper-slide, .best-selling-carousel swiper-slide{
     background-color: transparent;
+    width: 270px;
 }
 
 
@@ -442,30 +478,147 @@ swiper-slide img {
     border-radius: 4px;
     background-color: #F5F5F5;
     padding: 40px;
+    position: relative;
 }
 
-.item-details{
+.item-card .product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.item-details {
     padding-top: 16px;
     text-align: start;
 }
-.item-details .price h4{
+
+.item-details .price h4 {
     padding-top: 8px;
     color: var(--secondary-color) !important;
 }
-.item-details .price .discounted-price{
+
+.item-details .price .discounted-price {
     padding-left: 12px;
-    color:  #000;
+    color: #000;
     text-decoration: line-through;
     opacity: 0.5;
 }
 
-.item-details .ratting img{
+.item-details .ratting img {
     width: 100px;
     height: 20px;
 }
 
-.item-details .ratting{
+.item-details .ratting {
     padding-top: 8px;
     display: flex;
     gap: 8px;
+}
+
+.item-card .fill-heart,
+.fill-eye {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.fill-eye {
+    top: 54px;
+}
+
+.discount-percentage {
+    padding: 4px 12px;
+    color: #FAFAFA;
+    background-color: var(--secondary-color);
+    display: inline-block;
+    border-radius: 4px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.allProductsBtn {
+    text-align: center;
+    padding-bottom: 60px;
+    border-bottom: 0.5px rgb(0, 0, 0, 0.3) solid;
+}
+
+.categories-section {
+    margin-top: 80px;
+    
+}
+
+.categories-section .inner-heading {
+    padding-top: 20px;
+}
+
+.categories-carousel {
+    margin-top: 60px;
+    padding-bottom: 70px;
+    border-bottom: 0.5px rgb(0, 0, 0, 0.3) solid;
+}
+
+.categories-carousel swiper-slide {
+    background-color: transparent;
+    width: 170px;
+}
+
+.categories-carousel .category-item {
+    width: 59px;
+    height: 96px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.30);
+}
+
+.categories-carousel .category-item img {
+    width: 56px;
+    height: 56px;
+
+}
+
+.categories-carousel .category-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 170px;
+    height: 145px;
+}
+
+.categories-carousel .category-item p {
+    color: #000;
+
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+}
+
+.categories-carousel .category-item .svg-color{
+    stroke: #FAFAFA;
+}
+
+.this-month{
+    margin-top: 70px;
+}
+
+.this-month .inner-heading{
+    justify-content: space-between;
+}
+
+.best-selling-carousel{
+    margin-top: 60px;
+    margin-bottom: 140px;
+}
+@media screen and (max-width:1200px) {
+    .container {
+        padding: 0 20px;
+    }
+
 }
