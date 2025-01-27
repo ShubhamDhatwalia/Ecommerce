@@ -48,6 +48,7 @@ productData.forEach((product) => {
 
                             <img src="./assests/fill-heart.png" class="fill-heart" alt="">
                             <img src="./assests/fill-eye.png"  class="fill-eye" alt="">
+                            <button class=" add-to-cart">Add to Cart <button>
                             <div class="discount-percentage">
                                 <p>${product.discountPercentage}</p>
                             </div>
@@ -74,8 +75,9 @@ productData.forEach((product) => {
 
 
 
-  document.querySelector(".productSwiper").innerHTML += cardHtml;
+  document.querySelector(".salesSwiper").innerHTML += cardHtml;
   document.querySelector(".bestSellingSwiper").innerHTML += cardHtml;
+  document.querySelector(".productSwiper").innerHTML += cardHtml;
 })
 
 
@@ -84,13 +86,27 @@ productData.forEach((product) => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  const swiperElement = document.querySelector('.productSwiper');
+  const swiperElement = document.querySelector('.salesSwiper');
   const swiperElement2 = document.querySelector('.categorySwiper');
+  const swiperElement3 = document.querySelector('.productSwiper');
 
+
+  const swiper3 = swiperElement3.swiper;
   const swiper2 = swiperElement2.swiper;
   const swiper = swiperElement.swiper;
 
+
+
+document.querySelector('.products-prev').addEventListener('click', () => {
+
+    swiper3.slidePrev();
+});
  
+document.querySelector('.products-next').addEventListener('click', () => {
+
+    swiper3.slideNext();
+});
+
 
 
   document.querySelector('.category-prev').addEventListener('click', () => {
@@ -102,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     swiper2.slideNext();
   });
+
 
 
 
