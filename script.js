@@ -137,13 +137,15 @@ document.querySelector('.products-next').addEventListener('click', () => {
 
 
 
+document.querySelector(".menu-btn").addEventListener("click", ()=>{
+  document.querySelector(".overlay").style.height = "100%";
+})
 
 
-
-
-
-
-
+document.querySelector(".closebtn").addEventListener("click", ()=>
+{
+  document.querySelector(".overlay").style.height = "0";
+})
 
 
 
