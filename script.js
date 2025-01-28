@@ -15,7 +15,7 @@ for (i = 0; i < dropdown.length; i++) {
 
     var dropdownContent = this.nextElementSibling;
     var dropdownIcon = this.children[0];
-    console.log(dropdownIcon);
+    
 
     if (dropdownContent.style.display === "block") {
       dropdownContent.style.display = "none";

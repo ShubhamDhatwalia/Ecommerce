@@ -31,7 +31,7 @@ p {
     font-style: normal;
     font-weight: 400;
     line-height: 21px;
-    text-align: center;
+    
 }
 
 h1 {
@@ -1137,4 +1137,35 @@ footer a,
         justify-content: space-between;
     }
    
+}
+
+@media screen and (max-width: 1200px) {
+    .side-nav ul{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .side-nav {
+        max-width: 100% !important;
+        border-right: none;
+        padding: 16px 0;
+    }
+    .side-nav ul li{
+        padding-top: 0;
+    }
+    .side-nav ul li ul{
+        display: none;
+        position: absolute;
+        width: 120px;
+    }
+    .dropdown-btn img{
+        transform: rotate(90deg) !important;
+    }
+    .hero-content{
+        flex-wrap: wrap;
+    }
+    /* .offers-carousel{
+        margin-top: 0;
+    } */
 }
