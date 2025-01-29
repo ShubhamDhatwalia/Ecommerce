@@ -114,7 +114,7 @@ a {
 
 .container {
 
-    max-width: 1170px;
+    max-width: 1170px !important;
     margin: 0 auto;
 
 }
@@ -321,6 +321,45 @@ a {
     opacity: 1;
 }
 
+
+
+.side-nav-carousel .menu{
+  
+    list-style: none;
+    
+    padding: 26px 0;
+}
+.side-nav-carousel .menu .dropdown-btn{
+    display: flex;
+}
+
+
+.side-nav-carousel  a{
+    text-decoration: none;
+    
+}
+
+.side-nav-carousel .swiper{
+    overflow: visible !important;
+    overflow-x: clip !important;
+}
+.side-nav-carousel{
+    /* border-bottom: 0.5px rgb(0, 0, 0, 0.3) solid; */
+    display: none;
+}
+.side-nav-carousel .dropdown-menu{
+    list-style: none;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 120px;
+}
+
+.nav-carousel .swiper-wrapper{
+    transition-timing-function:linear!important;
+}
+
+
 .side-nav {
     white-space: nowrap;
     max-width: 217px;
@@ -334,7 +373,7 @@ a {
 
 }
 
-.side-nav ul li a:hover {
+.side-nav ul li a:hover, .dropdown-menu li a:hover {
     background-color: rgb(228, 227, 227);
 }
 
@@ -346,7 +385,7 @@ a {
     padding-top: 0px !important;
 }
 
-.side-nav ul li a {
+.side-nav ul li a, .dropdown-menu li a {
     text-decoration: none;
     padding-left: 5px;
     display: block;
@@ -357,7 +396,7 @@ a {
 }
 
 
-.side-nav ul .dropdown-btn {
+.side-nav ul .dropdown-btn, .side-nav-carousel ul .dropdown-btn {
     border: none;
     background: none;
     color: #000;
@@ -370,8 +409,12 @@ a {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
+    white-space: nowrap;
 }
 
+.side-nav-carousel ul .dropdown-btn {
+    justify-content: center;
+}
 .dropdown-btn img {
     display: block;
 }
@@ -380,7 +423,7 @@ a {
     cursor: pointer;
 }
 
-.dropdown-menu {
+.dropdown-menu  {
     padding-top: 5px;
     padding-left: 20px;
     display: none;
@@ -474,13 +517,7 @@ swiper-slide {
     width: 24px;
 }
 
-.swiper-pagination-bullet {
-    background: #fffdfd !important;
-}
 
-.swiper-pagination-bullet-active {
-    background: #DB4444 !important;
-}
 
 
 .flash-sales {
@@ -561,14 +598,22 @@ swiper-slide {
     margin-bottom: 60px;
 }
 
-.flash-sales-carousel swiper-slide,
-.best-selling-carousel swiper-slide,
-.products-carousel swiper-slide {
+.flash-sales-carousel .swiper-slide,
+.best-selling-carousel .swiper-slide,
+.products-carousel .swiper-slide, .side-nav-carousel .swiper-slide {
     background-color: transparent;
-    width: 270px;
+    
+    display: flex;
+    justify-content: center;
     height: auto;
 }
 
+
+.side-nav-carousel .swiper-slide{
+    width: auto !important;
+    max-width: 100%; 
+    display: inline-block; 
+}
 
 .item-card {
     max-width: 270px;
@@ -708,12 +753,15 @@ swiper-slide {
 .categories-carousel {
     margin-top: 60px;
     padding-bottom: 70px;
-    border-bottom: 0.5px rgb(0, 0, 0, 0.3) solid;
+    
 }
 
-.categories-carousel swiper-slide {
+.categories-carousel .swiper-slide {
     background-color: transparent;
-    width: 170px;
+    /* width: 170px !important; */
+    display: flex;
+    justify-content: center;
+    height: auto;
 }
 
 .categories-carousel .category-item {
@@ -1140,27 +1188,14 @@ footer a,
 }
 
 @media screen and (max-width: 1200px) {
-    .side-nav ul{
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        justify-content: flex-start;
+    
+
+    .side-nav-carousel{
+        display: block;
     }
-    .side-nav {
-        max-width: 100% !important;
-        border-right: none;
-        padding: 16px 0;
-    }
-    .side-nav ul li{
-        padding-top: 0;
-    }
-    .side-nav ul li ul{
+
+    .side-nav{
         display: none;
-        position: absolute;
-        width: 120px;
-    }
-    .dropdown-btn img{
-        transform: rotate(90deg) !important;
     }
     .hero-content{
         flex-wrap: wrap;
