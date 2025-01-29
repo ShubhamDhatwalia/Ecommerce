@@ -116,7 +116,8 @@ var productsCarousel = new Swiper(".products-carousel", {
   },
   breakpoints: {
     1200: {
-      slidesPerView: 4, spaceBetween: 30, slidesPerGroup: 4, grid: { rows: 2 }},
+      slidesPerView: 4, spaceBetween: 30, slidesPerGroup: 4, grid: { rows: 2 }
+    },
     992: { slidesPerView: 3, spaceBetween: 25, slidesPerGroup: 3, grid: { rows: 2 } },
     620: { slidesPerView: 2, spaceBetween: 10, slidesPerGroup: 2, grid: { rows: 2 } },
     200: { slidesPerView: 1, spaceBetween: 10, slidesPerGroup: 1, grid: { rows: 2 } },
@@ -147,14 +148,25 @@ var sideNavCarousel = new Swiper(".nav-carousel", {
   freeMode: true,
   speed: 8000,
   allowTouchMove: true,
-  
+
   autoplay: {
     delay: 0,
     pauseOnMouseEnter: true,
   }
 })
 
+var offersCarousel = new Swiper(".offers-carousel", {
+  loop: true,
 
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+})
 
 
 

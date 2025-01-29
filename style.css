@@ -452,12 +452,12 @@ a {
 }
 
 
-.offers-carousel swiper-slide {
+.offers-carousel .swiper-slide {
     width: 100% !important;
     height: auto;
 }
 
-swiper-slide {
+.offers-carousel .swiper-slide {
     text-align: center;
 
     display: flex;
@@ -470,23 +470,24 @@ swiper-slide {
 
 
 
-.offers-carousel swiper-slide img {
+.offers-carousel .swiper-slide img {
 
     width: 100%;
     height: auto;
 
 }
 
-.slide-content {
+.offers-carousel .slide-content {
     max-width: 294px;
     margin: 58px 64px 47px 38px;
     color: #FAFAFA;
     text-align: start;
+    position: absolute;
 }
 
 
 
-.slide-content a {
+.offers-carousel .slide-content a {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -497,20 +498,20 @@ swiper-slide {
     text-decoration-thickness: 1px;
 }
 
-.slide-content p {
+.offers-carousel .slide-content p {
     display: flex;
     align-items: center;
     gap: 24px;
     padding-bottom: 22px;
 }
 
-.slide-content p img {
+.offers-carousel .slide-content p img {
     display: block;
     width: 40px;
     height: 49px;
 }
 
-.slide-content a img {
+.offers-carousel .slide-content a img {
     display: block;
 
     height: 24px;
@@ -1152,9 +1153,7 @@ footer a,
 }
 
 @media screen and (max-width:1200px) {
-    .container {
-        padding: 0 20px;
-    }
+   
 
 }
 
@@ -1172,6 +1171,13 @@ footer a,
 }
 
 @media screen and (max-width: 930px) {
+
+
+    .offers-carousel .slide-content h1{
+        font-size: 40px;
+        line-height: 50px;
+    }
+
     .main-header .main-navigation {
         display: none;
     }
@@ -1190,6 +1196,9 @@ footer a,
 @media screen and (max-width: 1200px) {
     
 
+    .container {
+        padding: 0 20px;
+    }
     .side-nav-carousel{
         display: block;
     }
@@ -1200,7 +1209,5 @@ footer a,
     .hero-content{
         flex-wrap: wrap;
     }
-    /* .offers-carousel{
-        margin-top: 0;
-    } */
+ 
 }
