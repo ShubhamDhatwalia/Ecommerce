@@ -1134,7 +1134,6 @@ footer a,
 }
 
 
-
 .download-app-section p {
     color: #FAFAFA;
     opacity: 0.7;
@@ -1143,7 +1142,7 @@ footer a,
     font-style: normal;
     font-weight: 500;
     line-height: 18px;
-    /* 150% */
+ 
 }
 
 .social-links {
@@ -1167,14 +1166,12 @@ footer a,
     opacity: 0.5;
 
     color: #FFF;
-
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
     
-
 }
 
 .copyright img {
@@ -1187,6 +1184,10 @@ footer a,
 .swiper-pagination-bullet{
     background: #f0bdbd !important;
 }
+
+
+
+
 @media screen and (max-width: 425px) {
 
 
