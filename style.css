@@ -2,6 +2,15 @@
     margin: 0;
     padding: 0;
 }
+body{
+    margin: 0;
+    padding: 0;
+}
+
+body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
 
 :root {
     --secondary-color: #DB4444;
@@ -132,16 +141,23 @@ a {
     gap: 231px;
     color: #FAFAFA;
 
-
 }
 
-.promo-content .promo-message,
+
+
 .promo-message a {
     display: flex;
     align-items: center;
     gap: 8px;
     color: #FAFAFA;
+    margin-left: 10px;
 
+}
+
+.promo-message p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .promo-header .language-selector select {
@@ -276,7 +292,7 @@ a {
 
 .overlay{
     height: 0;
-    width: 100%;
+    width: 100vw;
     position: fixed;
     z-index: 100;
     top: 0;
@@ -479,10 +495,15 @@ a {
 
 .offers-carousel .slide-content {
     max-width: 294px;
-    margin: 58px 64px 47px 38px;
+    height: 100%;
+    /* margin: 58px 64px 47px 38px; */
+    left: 50px;
     color: #FAFAFA;
     text-align: start;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -541,11 +562,15 @@ a {
 .inner-heading {
     display: flex;
     align-items: end;
-    gap: 87px;
+    gap: 30px;
     white-space: nowrap;
     padding-top: 13px;
     position: relative;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
+
+
 
 .inner-heading-name {
     transform: translateY(8px);
@@ -580,8 +605,7 @@ a {
     display: flex;
     align-items: flex-end;
     gap: 8px;
-    position: absolute;
-    right: 0;
+    
 }
 
 .carousel-controller img {
@@ -824,21 +848,30 @@ a {
 .this-month .container .banner {
     width: 100%;
     height: auto;
-    position: relative;
+
+    display: flex;
+    background: #000;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-.banner img {
+.banner .banner-image img {
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
-.banner-content {
-    position: absolute;
-    top: 69px;
-    left: 56px;
+.banner-content{
+    padding: 40px 0 40px 40px;
+
     display: flex;
     flex-direction: column;
     gap: 32px;
+}
+.banner-content , .banner-image{
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 .banner-content h2 {
@@ -1064,13 +1097,11 @@ footer .download-app-section {
     gap: 16px;
 }
 
-footer .support-section {
+footer .support-section p {
     max-width: 175px;
 }
 
-footer .exclusive-section {
-    max-width: 217px;
-}
+
 
 footer a,
 .account-section ul li a {
@@ -1102,9 +1133,7 @@ footer a,
     cursor: pointer;
 }
 
-.download-app-section {
-    max-width: 200px !important;
-}
+
 
 .download-app-section p {
     color: #FAFAFA;
@@ -1144,7 +1173,7 @@ footer a,
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    /* 150% */
+    
 
 }
 
@@ -1152,30 +1181,176 @@ footer a,
     display: block;
 }
 
-@media screen and (max-width:1200px) {
-   
+.swiper-pagination-bullet-active{
+    background: var(--secondary-color) !important;
+}
+.swiper-pagination-bullet{
+    background: #f0bdbd !important;
+}
+@media screen and (max-width: 425px) {
 
+
+    .featured-thumbs .thumb-2 .thumb-description{
+        bottom: 32px !important;
+    }
+    .exclusive-section, .support-section, .account-section, .quick-link-section, .download-app-section{
+        flex: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    h3{
+        font-size: 25px !important;
+    }
+
+    .offers-carousel .swiper-slide{
+        height: 200px;
+    }
 }
 
-
 @media screen and (max-width:690px) {
+
+    h3{
+        font-size: 30px;
+    }
+
+    .featured-services{
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .banner-content{
+        gap: 10px !important;
+    }
+
+    .banner-content .btn{
+        padding: 5px 10px !important;
+    }
+
+    .banner-content .time{
+        gap: 5px !important;
+
+        
+    }
+    .banner-content .time h2 span{
+        font-size: 8px;
+        line-height: 12px;
+    }
+    .banner-content .time h2{
+        font-size: 10px !important;
+        line-height: 8px !important;
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .banner .banner-content h1{
+        font-size: 15px !important ;
+        line-height: 25px !important;
+    }
+
+
+    .flash-sales-carousel, .products-carousel, .best-selling-carousel, .categories-carousel{
+        margin-top: 20px;
+    }
+
+    .inner-heading .view-all-btn .btn{
+        float: right;
+    }
+
+    .inner-heading .view-all-btn{
+        flex: 100%;
+        
+    }
+
+     .inner-heading .carousel-controller{
+        flex: 100%;
+        justify-content: end;
+    }
+
+    .offers-carousel .slide-content{
+        max-width: 250px;
+        left: 20px;
+    }
+
+    .offers-carousel .slide-content a{
+        padding-top: 5px !important;
+    }
+
+    .offers-carousel .slide-content p img{
+        width: 30px;
+        height: 30px;
+    }
+    .offers-carousel .slide-content p{
+        padding-bottom: 10px;
+        gap: 10px;
+    }
+
+
+    .offers-carousel .slide-content h1{
+        font-size: 20px !important;
+        line-height: 25px !important;
+    }
     .search-bar {
         display: none;
     }
     .overlay .search-bar{
         display: block;
     }
-    .promo-header{
-        display: none;
-    }
+   
 }
 
 @media screen and (max-width: 930px) {
 
+    .featured-thumbs .thumb-right .thumb-right-subpart{
+        justify-content: center;
+    }
+    
+    .featured-thumbs .thumb-left, .featured-thumbs .thumb-right{
+        flex: 100%;
+    }
+    .featured-thumbs{
+        flex-wrap: wrap;
+        
+    }
+
+    .banner-content{
+        gap: 20px;
+    }
+
+    .banner-content .btn{
+        padding: 5px 20px;
+    }
+
+    .banner-content .time{
+        gap: 10px;
+    }
+    .banner-content .time h2{
+        line-height: 8px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .banner .banner-content h1{
+        font-size: 30px ;
+        line-height: 35px;
+    }
+
+    .inner-heading .inner-heading-name{
+        flex: 100%;
+    }
+
+    .offers-carousel .slide-content a{
+        padding-top: 15px;
+    }
+    .offers-carousel .slide-content p{
+        padding-bottom: 10px;
+    }
+
 
     .offers-carousel .slide-content h1{
         font-size: 40px;
-        line-height: 50px;
+        line-height: 40px;
     }
 
     .main-header .main-navigation {
@@ -1187,8 +1362,8 @@ footer a,
     }
 
     .promo-content{
-        gap: 0;
-        justify-content: space-between;
+        gap: 100px;
+        justify-content: space-between !important;
     }
    
 }

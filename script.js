@@ -34,7 +34,7 @@ for (i = 0; i < dropdown.length; i++) {
 productData.forEach((product) => {
   const cardHtml = `
 
-  <div class="productSlides swiper-slide">
+  <div class="productSlides swiper-slide" data-aos="flip-left">
                         <div class="productItem">
 
   <div class="item-card">
@@ -170,8 +170,10 @@ var offersCarousel = new Swiper(".offers-carousel", {
 
 
 
+
 document.querySelector(".menu-btn").addEventListener("click", () => {
   document.querySelector(".overlay").style.height = "100%";
+  
 })
 
 
@@ -181,3 +183,4 @@ document.querySelector(".closebtn").addEventListener("click", () => {
 
 
 
+AOS.init();

@@ -16,16 +16,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <header class="promo-header">
+    <header class="promo-header" data-aos="zoom-in">
         <div class="container">
             <div class="promo-content">
-                <div class="promo-message">
-                    <p>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!</p>
-                    <a href="#" class="promo-link">Shop Now</a>
-                </div>
+              
+                <marquee class="ticker promo-marquee" onmouseover="this.stop()" onmouseout="this.start()">
+                    <div class="promo-message ">
+                        <p >Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! <a href="#" class="promo-link">Shop Now</a> </p>
+                        
+                    </div>
+                 </marquee>
+                    
+                
+
                 <div class="language-selector">
                     <select name="language" id="language-dropdown">
                         <option value="en">English</option>
@@ -36,7 +44,7 @@
         </div>
     </header>
 
-    <header class="main-header">
+    <header class="main-header" data-aos="zoom-in" data-aos-duration="1000">
         <div class="container">
 
             <div class="header-content">
@@ -62,9 +70,9 @@
 
 
 
-                        <a href="#" class="wishlist-link"><img src="./assests/favorite-icon.svg"
+                        <a href="#wishlist" class="wishlist-link"><img src="./assests/favorite-icon.svg"
                                 alt="Wishlist Icon"></a>
-                        <a href="#" class="cart-link"><img src="./assests/cart-icon.svg" alt="Cart Icon"></a>
+                        <a href="#cart" class="cart-link"><img src="./assests/cart-icon.svg" alt="Cart Icon"></a>
 
                         <a href="#" class="menu-btn"><i class="fa-solid fa-bars"></i></a>
                     </div>
@@ -72,30 +80,31 @@
             </div>
 
 
-            <div class="overlay">
-                <div class="overlay-content">
-
-                    <a href="#" class="closebtn">&times;</a>
-                    <ul class="navigation-menu">
-                        <li>
-                            <form action="#" class="search-bar">
-                                <input type="text" placeholder="What are you looking for?" class="search-input">
-                                <button type="submit" class="search-btn"><img src="./assests/search-icon.svg"
-                                        alt="Search Icon" class="search-icon"></button>
-                            </form>
-                        </li>
-                        <li><a href="#home" class="menu-link">Home</a></li>
-                        <li><a href="#about" class="menu-link">About</a></li>
-                        <li><a href="#contact" class="menu-link">Contact</a></li>
-                        <li><a href="#signup" class="menu-link">Sign Up</a></li>
-                    </ul>
-                </div>
-            </div>
+           
         </div>
     </header>
 
+    <div class="overlay">
+        <div class="overlay-content">
 
-    <nav class="side-nav-carousel ">
+            <a href="#" class="closebtn">&times;</a>
+            <ul class="navigation-menu">
+                <li>
+                    <form action="#" class="search-bar">
+                        <input type="text" placeholder="What are you looking for?" class="search-input">
+                        <button type="submit" class="search-btn"><img src="./assests/search-icon.svg"
+                                alt="Search Icon" class="search-icon"></button>
+                    </form>
+                </li>
+                <li><a href="#home" class="menu-link">Home</a></li>
+                <li><a href="#about" class="menu-link">About</a></li>
+                <li><a href="#contact" class="menu-link">Contact</a></li>
+                <li><a href="#signup" class="menu-link">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <nav class="side-nav-carousel " >
         <div class="container">
             <div class=" swiper nav-carousel ">
                 <ul class="menu swiper-wrapper">
@@ -131,7 +140,7 @@
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <nav class="side-nav">
+                <nav class="side-nav" data-aos="fade-right" data-aos-duration="1000">
                     <ul>
                         <li><button class="dropdown-btn">Woman’s Fashion <img src="./assests/DropDown-icon.png"
                                     alt=""></button>
@@ -160,7 +169,7 @@
                     </ul>
                 </nav>
 
-                <div class="offers-carousel swiper">
+                <div class="offers-carousel swiper" data-aos="zoom-in" data-aos-duration="1000">
                     <div class="bannerSwiper swiper-wrapper" pagination="true" pagination-clickable="true"
                         autoplay-delay="2500" autoplay-disable-on-interaction="false" loop="true">
                         
@@ -214,7 +223,7 @@
     </section>
 
 
-    <section class="flash-sales">
+    <section class="flash-sales" data-aos="fade-up">
 
         <div class="container">
             <div class="heading">
@@ -227,7 +236,7 @@
                     <h3>Flash Sales</h3>
 
                 </div>
-                <div class="duration">
+                <div class="duration" >
                     <div>
                         <p>Days</p>
                         <h6>03 <span class="duration-colon">:</span></h6>
@@ -257,14 +266,14 @@
             </div>
 
 
-            <div class="flash-sales-carousel swiper">
+            <div class="flash-sales-carousel swiper" >
                 <div class="salesSwiper swiper-wrapper">
 
 
                 </div>
             </div>
 
-            <div class="allProductsBtn">
+            <div class="allProductsBtn"  data-aos="fade-down" data-aos-duration="1500">
                 <button class="btn">View All Products</button>
             </div>
         </div>
@@ -272,17 +281,17 @@
     </section>
 
 
-    <section class="categories-section">
+    <section class="categories-section"  data-aos="fade-down">
         <div class="container">
-            <div class="heading">
+            <div class="heading" data-aos="fade-right">
                 <img src="./assests/headings-icon.svg" alt="">
                 <h2>Categories</h2>
             </div>
 
-            <div class="inner-heading">
-                <h3>Browse By Category</h3>
+            <div class="inner-heading" >
+                <h3 data-aos="fade-right">Browse By Category</h3>
 
-                <div class="carousel-controller">
+                <div class="carousel-controller" data-aos="zoom-in">
                     <div><img src="./assests/prev.png" class="category-prev" alt=""></div>
                     <div><img src="./assests/next.png" alt="" class="category-next"></div>
                 </div>
@@ -368,17 +377,19 @@
     </section>
 
 
-    <section class="this-month">
+    <section class="this-month" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
-            <div class="heading">
+            <div class="heading" data-aos="fade-right">
                 <img src="./assests/headings-icon.svg" alt="">
                 <h2>This Month</h2>
             </div>
 
             <div class="inner-heading">
-                <h3>Browse By Category</h3>
+                <h3 data-aos="fade-right">Browse By Category</h3>
 
-                <button class="btn">View All</button>
+                <div class="view-all-btn" data-aos="zoom-in">
+                    <button class="btn">View All</button>
+                </div>
             </div>
 
             <div class="best-selling-carousel swiper">
@@ -391,8 +402,8 @@
 
             </div>
 
-            <div class="banner">
-                <img src="./assests/banner.png" alt="">
+            <div class="banner" data-aos="zoom-in-up">
+                
 
                 <div class="banner-content">
                     <h2>Categories</h2>
@@ -411,23 +422,27 @@
                         </button>
                     </div>
                 </div>
+
+                <div class="banner-image">
+                    <img src="./assests/bannerimg.png" alt="">
+                </div>
             </div>
 
         </div>
     </section>
 
 
-    <section class="products-section">
+    <section class="products-section" >
         <div class="container">
-            <div class="heading">
+            <div class="heading" data-aos="fade-right">
                 <img src="./assests/headings-icon.svg" alt="">
-                <h2>Our Products</h2>
+                <h2 >Our Products</h2>
             </div>
 
             <div class="inner-heading">
-                <h3>Explore Our Products</h3>
+                <h3 data-aos="fade-right">Explore Our Products</h3>
 
-                <div class="carousel-controller">
+                <div class="carousel-controller" data-aos="zoom-in">
                     <div><img src="./assests/prev.png" class="products-prev" alt=""></div>
                     <div><img src="./assests/next.png" alt="" class="products-next"></div>
                 </div>
@@ -440,7 +455,7 @@
             </div>
             </div>
 
-            <div class="allProductsBtn">
+            <div class="allProductsBtn" data-aos="fade-down" data-aos-duration="1500">
                 <button class="btn">View All Products</button>
             </div>
         </div>
@@ -448,20 +463,20 @@
     </section>
 
 
-    <section class="featured-section">
+    <section class="featured-section" >
         <div class="container">
-            <div class="heading">
+            <div class="heading" data-aos="fade-right">
                 <img src="./assests/headings-icon.svg" alt="">
                 <h2>Featured</h2>
             </div>
 
-            <div class="inner-heading">
+            <div class="inner-heading" data-aos="fade-right">
                 <h3>New Arrival</h3>
             </div>
 
 
             <div class="featured-thumbs">
-                <div class="thumb-left">
+                <div class="thumb-left" data-aos="flip-left">
                     <img src="./assests/thumb1.png" alt="">
                     <div class="thumb-description">
                         <h3>PlayStation 5</h3>
@@ -471,7 +486,7 @@
                 </div>
 
                 <div class="thumb-right">
-                    <div class="thumb-2">
+                    <div class="thumb-2" data-aos="flip-right">
                         <img src="./assests/thumb2.png" alt="">
 
                         <div class="thumb-description">
@@ -482,7 +497,7 @@
 
                     <div class="thumb-right-subpart">
 
-                        <div class="thumb-3">
+                        <div class="thumb-3" data-aos="flip-right">
                             <img src="./assests/thumb3.png" alt="">
                             <div class="thumb-description">
                                 <h3>Speakers</h3>
@@ -491,7 +506,7 @@
                             </div>
                         </div>
 
-                        <div class="thumb-4">
+                        <div class="thumb-4" data-aos="flip-right">
                             <img src="./assests/thumb4.png" alt="">
                             <div class="thumb-description">
                                 <h3>Perfume</h3>
@@ -506,20 +521,20 @@
 
 
             <div class="featured-services">
-                <div>
+                <div data-aos="zoom-in" data-aos-duration="1500">
                     <img src="./assests/free-fast-delivery.png">
                     <h5>FREE AND FAST DELIVERY</h5>
                     <p>Free delivery for all orders over $140</p>
                 </div>
 
-                <div>
+                <div data-aos="zoom-in" data-aos-duration="1500">
                     <img src="./assests/customer-service.png">
                     <h5>FREE AND FAST DELIVERY</h5>
                     <p>Free delivery for all orders over $140</p>
                 </div>
 
 
-                <div>
+                <div data-aos="zoom-in" data-aos-duration="1500">
                     <img src="./assests/guarantee.png">
                     <h5>FREE AND FAST DELIVERY</h5>
                     <p>Free delivery for all orders over $140</p>
@@ -536,7 +551,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="exclusive-section">
+                <div class="exclusive-section" data-aos="zoom-in" data-aos-duration="1500">
                     <h1 class="footer-logo">Exclusive </h1>
                     <h5>Subscribe</h5>
                     <p>Get 10% off your first order</p>
@@ -546,7 +561,7 @@
                     </div>
                 </div>
 
-                <div class="support-section">
+                <div class="support-section" data-aos="zoom-in" data-aos-duration="1500">
                     <h5>Support</h5>
 
                     <p>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
@@ -554,7 +569,7 @@
                     <a href="tel:+88015-88888-9999">+88015-88888-9999</a>
                 </div>
 
-                <div class="account-section">
+                <div class="account-section" data-aos="zoom-in" data-aos-duration="1500">
                     <h5>Account</h5>
 
                     <ul>
@@ -568,7 +583,7 @@
                     </ul>
                 </div>
 
-                <div class="quick-link-section">
+                <div class="quick-link-section" data-aos="zoom-in" data-aos-duration="1500">
                     <h5>Quick Link</h5>
 
                     <ul>
@@ -580,7 +595,7 @@
                     </ul>
                 </div>
 
-                <div class="download-app-section">
+                <div class="download-app-section" data-aos="zoom-in" data-aos-duration="1500">
                     <h5>Download App</h5>
 
                     <p>Save $3 with App New User Only</p>
@@ -602,13 +617,14 @@
                 </div>
             </div>
 
-            <div class="copyright">
+            <div class="copyright" >
                 <img src="./assests/icon-copyright.png" alt="">
                 <p>Copyright Rimel 2022. All right reserved</p>
             </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script type="module" src="/script.js"></script>
 
