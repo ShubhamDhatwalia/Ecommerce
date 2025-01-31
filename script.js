@@ -216,6 +216,8 @@ var x = setInterval(function() {
  
   if (distance < 0) {
     clearInterval(x);
-   
+   document.getElementsByClassName("duration").style.display = 'none';
+   document.getElementsByClassName("time").style.display = 'none';
+
   }
 }, 1000);
