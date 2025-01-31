@@ -1,5 +1,5 @@
 import { productData } from "./productData.js";
-
+AOS.init();
 
 var dropdown = document.getElementsByClassName("dropdown-btn");
 
@@ -170,17 +170,52 @@ var offersCarousel = new Swiper(".offers-carousel", {
 
 
 
+const body = document.body;
 
 document.querySelector(".menu-btn").addEventListener("click", () => {
   document.querySelector(".overlay").style.height = "100%";
+  body.classList.add("no-scroll");
   
 })
 
 
 document.querySelector(".closebtn").addEventListener("click", () => {
   document.querySelector(".overlay").style.height = "0";
+  body.classList.remove("no-scroll");
 })
 
 
+const countDownDate = new Date("Feb 5, 2025 15:37:25").getTime();
 
-AOS.init();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+   
+  var distance = countDownDate - now;
+    
+  
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  
+  document.getElementById("days").innerHTML = String(days).padStart(2, "0");
+  document.getElementById("banner-days").innerHTML = String(days).padStart(2, "0");
+
+  document.getElementById("hours").innerHTML = String(hours).padStart(2, "0");
+  document.getElementById("banner-hours").innerHTML = String(hours).padStart(2, "0");
+
+  document.getElementById("minutes").innerHTML = String(minutes).padStart(2, "0");
+  document.getElementById("banner-minutes").innerHTML = String(minutes).padStart(2, "0");
+
+  document.getElementById("seconds").innerHTML = String(seconds).padStart(2, "0");
+  document.getElementById("banner-seconds").innerHTML = String(seconds).padStart(2, "0");
+
+ 
+  if (distance < 0) {
+    clearInterval(x);
+   
+  }
+}, 1000);
