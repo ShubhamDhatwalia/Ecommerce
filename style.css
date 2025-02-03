@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
 }
@@ -34,13 +35,15 @@ body.no-scroll {
     cursor: pointer;
 }
 
+
+
 p {
     font-family: "Poppins", sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 21px;
-    
+
 }
 
 h1 {
@@ -154,7 +157,7 @@ a {
 
 }
 
-.promo-message p{
+.promo-message p {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -215,12 +218,19 @@ a {
     text-decoration-color: rgba(0, 0, 0, 0.5);
 }
 
-.header-content {
-    justify-content: space-between;
-    /* gap: 148px; */
+.navigation-menu a.visited{
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(0, 0, 0, 0.5);
 }
 
-.header-actions .search-bar, .overlay .search-bar {
+.header-content {
+    justify-content: space-between;
+}
+
+.header-actions .search-bar,
+.overlay .search-bar {
     position: relative;
 
 }
@@ -230,7 +240,8 @@ a {
 
 }
 
-.header-actions input, .overlay .search-bar input {
+.header-actions input,
+.overlay .search-bar input {
     padding: 7px 42px 7px 20px;
     border-radius: 4px;
     background: #F5F5F5;
@@ -244,11 +255,12 @@ a {
     font-style: normal;
     font-weight: 400;
     line-height: 18px;
-   
+
     /* 150% */
 }
 
-.header-actions .search-bar .search-btn , .overlay .search-bar .search-btn {
+.header-actions .search-bar .search-btn,
+.overlay .search-bar .search-btn {
     position: absolute;
     border: none;
     background: none;
@@ -282,23 +294,23 @@ a {
 }
 
 
-.overlay .search-bar input{
-   opacity: 1;
+.overlay .search-bar input {
+    opacity: 1;
 }
 
-.overlay .search-bar{
+.overlay .search-bar {
     display: none;
 }
 
-.overlay{
+.overlay {
     height: 0;
     width: 100vw;
     position: fixed;
     z-index: 100;
     top: 0;
     left: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0);
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0);
     overflow-y: hidden;
     transition: 0.5s;
     display: flex;
@@ -317,53 +329,58 @@ a {
     text-decoration: none;
     opacity: 0.8;
 }
-.overlay .closebtn:hover{
+
+.overlay .closebtn:hover {
     opacity: 1;
 }
 
-.overlay-content ul{
+.overlay-content ul {
     display: flex;
     flex-direction: column;
     gap: 40px;
     color: #FAFAFA;
 }
-.overlay-content ul li a{
+
+.overlay-content ul li a {
     color: #FAFAFA;
     font-size: 25px;
     opacity: 0.8;
 }
 
-.overlay-content ul li a:hover{
+.overlay-content ul li a:hover {
     opacity: 1;
 }
 
 
 
-.side-nav-carousel .menu{
-  
+.side-nav-carousel .menu {
+
     list-style: none;
-    
+
     padding: 26px 0;
 }
-.side-nav-carousel .menu .dropdown-btn{
+
+.side-nav-carousel .menu .dropdown-btn {
     display: flex;
 }
 
 
-.side-nav-carousel  a{
+.side-nav-carousel a {
     text-decoration: none;
-    
+
 }
 
-.side-nav-carousel .swiper{
+.side-nav-carousel .swiper {
     overflow: visible !important;
     overflow-x: clip !important;
 }
-.side-nav-carousel{
+
+.side-nav-carousel {
     /* border-bottom: 0.5px rgb(0, 0, 0, 0.3) solid; */
     display: none;
 }
-.side-nav-carousel .dropdown-menu{
+
+.side-nav-carousel .dropdown-menu {
     list-style: none;
     position: absolute;
     top: 20px;
@@ -371,8 +388,8 @@ a {
     width: 120px;
 }
 
-.nav-carousel .swiper-wrapper{
-    transition-timing-function:linear!important;
+.nav-carousel .swiper-wrapper {
+    transition-timing-function: linear !important;
 }
 
 
@@ -389,7 +406,8 @@ a {
 
 }
 
-.side-nav ul li a:hover, .dropdown-menu li a:hover {
+.side-nav ul li a:hover,
+.dropdown-menu li a:hover {
     background-color: rgb(228, 227, 227);
 }
 
@@ -401,7 +419,8 @@ a {
     padding-top: 0px !important;
 }
 
-.side-nav ul li a, .dropdown-menu li a {
+.side-nav ul li a,
+.dropdown-menu li a {
     text-decoration: none;
     padding-left: 5px;
     display: block;
@@ -412,7 +431,8 @@ a {
 }
 
 
-.side-nav ul .dropdown-btn, .side-nav-carousel ul .dropdown-btn {
+.side-nav ul .dropdown-btn,
+.side-nav-carousel ul .dropdown-btn {
     border: none;
     background: none;
     color: #000;
@@ -431,6 +451,7 @@ a {
 .side-nav-carousel ul .dropdown-btn {
     justify-content: center;
 }
+
 .dropdown-btn img {
     display: block;
 }
@@ -439,7 +460,7 @@ a {
     cursor: pointer;
 }
 
-.dropdown-menu  {
+.dropdown-menu {
     padding-top: 5px;
     padding-left: 20px;
     display: none;
@@ -605,7 +626,7 @@ a {
     display: flex;
     align-items: flex-end;
     gap: 8px;
-    
+
 }
 
 .carousel-controller img {
@@ -625,24 +646,25 @@ a {
 
 .flash-sales-carousel .swiper-slide,
 .best-selling-carousel .swiper-slide,
-.products-carousel .swiper-slide, .side-nav-carousel .swiper-slide {
+.products-carousel .swiper-slide,
+.side-nav-carousel .swiper-slide {
     background-color: transparent;
-    
+
     display: flex;
     justify-content: center;
     height: auto;
 }
 
 
-.side-nav-carousel .swiper-slide{
+.side-nav-carousel .swiper-slide {
     width: auto !important;
-    max-width: 100%; 
-    display: inline-block; 
+    max-width: 100%;
+    display: inline-block;
 }
 
 .item-card {
     max-width: 270px;
-    
+
     border-radius: 4px;
     transition: box-shadow 0.2s ease-in-out;
 }
@@ -778,7 +800,7 @@ a {
 .categories-carousel {
     margin-top: 60px;
     padding-bottom: 70px;
-    
+
 }
 
 .categories-carousel .swiper-slide {
@@ -853,7 +875,7 @@ a {
     background: #000;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .banner .banner-image img {
@@ -862,14 +884,16 @@ a {
     object-fit: cover;
 }
 
-.banner-content{
+.banner-content {
     padding: 40px 0 40px 40px;
 
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
-.banner-content , .banner-image{
+
+.banner-content,
+.banner-image {
     flex: 1 1 0;
     min-width: 0;
 }
@@ -1142,7 +1166,7 @@ footer a,
     font-style: normal;
     font-weight: 500;
     line-height: 18px;
- 
+
 }
 
 .social-links {
@@ -1171,17 +1195,18 @@ footer a,
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    
+
 }
 
 .copyright img {
     display: block;
 }
 
-.swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active {
     background: var(--secondary-color) !important;
 }
-.swiper-pagination-bullet{
+
+.swiper-pagination-bullet {
     background: #f0bdbd !important;
 }
 
@@ -1190,170 +1215,496 @@ footer a,
 }
 
 
+/* 
+ ----- About Page Styling ---------  */
+
+.breadcrumb {
+    display: flex;
+    list-style: none;
+    gap: 12px;
+}
+
+.about {
+    margin-top: 80px;
+
+}
+
+.breadcrumb a {
+    color: #000;
+    line-height: 21px;
+    opacity: 0.5;
+    text-decoration: none;
+}
+
+.breadcrumb li+li:before {
+    content: "/\00a0";
+    opacity: 1;
+    color: #000;
+
+    font-weight: bold;
+}
+
+
+.story {
+    display: flex;
+    gap: 75px;
+    margin-top: 42px;
+    align-items: center;
+}
+
+.story-content {
+
+    flex: 1;
+}
+
+.story-content h1 {
+    color: #000;
+    text-align: justify;
+
+    padding-bottom: 18px;
+    /* Heading/54PX SemiBold */
+    font-family: "Inter", sans-serif;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 64px;
+    /* 118.519% */
+    letter-spacing: 3.24px;
+}
+
+.story-content p {
+    color: #000;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    margin-top: 24px;
+    /* 162.5% */
+}
+
+.story .story-image {
+    flex: 1;
+}
+
+.story .story-image img {
+    width: 100%;
+    height: auto;
+}
+
+.full-services {
+    display: flex;
+    margin-top: 140px;
+    gap: 30px;
+    justify-content: center;
+
+}
+
+.full-service-card img {
+    margin-bottom: 24px;
+}
+
+.full-service-card {
+    display: flex;
+    justify-content: center;
+}
+
+.full-service-card .card {
+
+
+    text-align: center;
+    width: 272px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.30);
+    padding: 30px 0;
+}
+
+.full-service-card p {
+    color: #000;
+    font-size: 16px;
+    margin-top: 12px;
+    line-height: 24px;
+    /* 150% */
+}
+
+.team {
+    margin-top: 140px;
+    padding-bottom: 50px;
+}
+
+
+
+.team-carousel .swiper-wrapper {
+    padding-bottom: 50px;
+
+}
+
+.team-card {
+    display: flex !important;
+    justify-content: center !important;
+}
+
+.team-card .team-image {
+    width: 370px;
+    height: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 4px;
+    background: #F5F5F5;
+
+}
+
+.team-details {
+    padding-top: 32px;
+}
+
+.team-details .team-name {
+
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 1.28px;
+}
+
+.team-card .team-designation {
+
+    font-size: 16px;
+    padding-top: 8px;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+}
+
+.team-details .team-contacts img {
+    display: block;
+}
+
+.team-details .team-contacts {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 16px;
+}
+
+.team-pagination {
+    bottom: 0px !important;
+}
+
+
+
+
+/* -----------------  Contact Page--------------------- */
+
+.contact {
+    margin-top: 80px;
+}
+
+.contact-component {
+    margin-top: 80px;
+    display: inline-flex;
+    gap: 30px;
+}
+
+.contact-details {
+    max-width: 262px;
+    border-radius: 4px;
+    background: #FFF;
+
+    padding: 40px 35px 51px 35px;
+    box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.05);
+}
+
+.contact-details a {
+    text-decoration: none;
+
+
+    /* Title/14PX Regular */
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    /* 150% */
+}
+
+.contact-details .call-to-us {
+    padding-bottom: 32px;
+    border-bottom: 0.5px rgb(0, 0, 0, 0.3) solid;
+}
+
+.contact-details .heading {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+.contact-details p {
+    padding-top: 16px;
+
+}
+
+.write-to-us {
+    padding-top: 32px;
+}
+
+.contact-form {
+    padding: 40px 32px 40px 31px;
+    border-radius: 4px;
+    background: #FFF;
+   
+
+    box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.contact-form form input , textarea{
+ 
+    padding: 0 16px;
+    border-radius: 4px;
+    background: #F5F5F5;
+    height: 50px;
+    border: none;
+    color: #000;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+}
+
+.contact-form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.contact-form form textarea {
+    width: auto;
+    height: 207px;
+    padding-top: 13px;
+    
+
+}
+
+.contact-form form .send-message-btn{
+    float: right;
+}
 
 
 @media screen and (max-width: 425px) {
 
 
-    .featured-thumbs .thumb-2 .thumb-description{
+    .featured-thumbs .thumb-2 .thumb-description {
         bottom: 32px !important;
     }
-    .exclusive-section, .support-section, .account-section, .quick-link-section, .download-app-section{
+
+    .exclusive-section,
+    .support-section,
+    .account-section,
+    .quick-link-section,
+    .download-app-section {
         flex: 100%;
         justify-content: center;
         align-items: center;
         text-align: center;
     }
 
-    h3{
+    h3 {
         font-size: 25px !important;
     }
 
-    .offers-carousel .swiper-slide{
+    .offers-carousel .swiper-slide {
         height: 200px;
     }
 }
 
 @media screen and (max-width:690px) {
 
-    h3{
+    .contact-component{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .full-service-card {
+        flex: 0 1 calc(50%) !important;
+        box-sizing: border-box;
+    }
+
+    h3 {
         font-size: 30px;
     }
 
-    .featured-services{
+    .featured-services {
         gap: 40px;
         flex-wrap: wrap;
     }
 
-    .banner-content{
+    .banner-content {
         gap: 10px !important;
     }
 
-    .banner-content .btn{
+    .banner-content .btn {
         padding: 5px 10px !important;
     }
 
-    .banner-content .time{
+    .banner-content .time {
         gap: 5px !important;
 
-        
+
     }
-    .banner-content .time h2 span{
+
+    .banner-content .time h2 span {
         font-size: 8px;
         line-height: 12px;
     }
-    .banner-content .time h2{
+
+    .banner-content .time h2 {
         font-size: 10px !important;
         line-height: 8px !important;
         width: 40px !important;
         height: 40px !important;
     }
 
-    .banner .banner-content h1{
-        font-size: 15px !important ;
+    .banner .banner-content h1 {
+        font-size: 15px !important;
         line-height: 25px !important;
     }
 
 
-    .flash-sales-carousel, .products-carousel, .best-selling-carousel, .categories-carousel{
+    .flash-sales-carousel,
+    .products-carousel,
+    .best-selling-carousel,
+    .categories-carousel {
         margin-top: 20px;
     }
 
-    .inner-heading .view-all-btn .btn{
+    .inner-heading .view-all-btn .btn {
         float: right;
     }
 
-    .inner-heading .view-all-btn{
+    .inner-heading .view-all-btn {
         flex: 100%;
-        
+
     }
 
-     .inner-heading .carousel-controller{
+    .inner-heading .carousel-controller {
         flex: 100%;
         justify-content: end;
     }
 
-    .offers-carousel .slide-content{
+    .offers-carousel .slide-content {
         max-width: 250px;
         left: 20px;
     }
 
-    .offers-carousel .slide-content a{
+    .offers-carousel .slide-content a {
         padding-top: 5px !important;
     }
 
-    .offers-carousel .slide-content p img{
+    .offers-carousel .slide-content p img {
         width: 30px;
         height: 30px;
     }
-    .offers-carousel .slide-content p{
+
+    .offers-carousel .slide-content p {
         padding-bottom: 10px;
         gap: 10px;
     }
 
 
-    .offers-carousel .slide-content h1{
+    .offers-carousel .slide-content h1 {
         font-size: 20px !important;
         line-height: 25px !important;
     }
+
     .search-bar {
         display: none;
     }
-    .overlay .search-bar{
+
+    .overlay .search-bar {
         display: block;
     }
-   
+
 }
 
 @media screen and (max-width: 930px) {
 
-    .featured-thumbs .thumb-right .thumb-right-subpart{
-        justify-content: center;
-    }
-    
-    .featured-thumbs .thumb-left, .featured-thumbs .thumb-right{
-        flex: 100%;
-    }
-    .featured-thumbs{
+    .story {
         flex-wrap: wrap;
-        
     }
 
-    .banner-content{
+    .story .story-content {
+        flex: 100%;
+    }
+
+    .story .story-image {
+        flex: 100%;
+    }
+
+    .featured-thumbs .thumb-right .thumb-right-subpart {
+        justify-content: center;
+    }
+
+    .featured-thumbs .thumb-left,
+    .featured-thumbs .thumb-right {
+        flex: 100%;
+    }
+
+    .featured-thumbs {
+        flex-wrap: wrap;
+
+    }
+
+    .banner-content {
         gap: 20px;
     }
 
-    .banner-content .btn{
+    .banner-content .btn {
         padding: 5px 20px;
     }
 
-    .banner-content .time{
+    .banner-content .time {
         gap: 10px;
     }
-    .banner-content .time h2{
+
+    .banner-content .time h2 {
         line-height: 8px;
         width: 55px;
         height: 55px;
     }
 
-    .banner .banner-content h1{
-        font-size: 30px ;
+    .banner .banner-content h1 {
+        font-size: 30px;
         line-height: 35px;
     }
 
-    .inner-heading .inner-heading-name{
+    .inner-heading .inner-heading-name {
         flex: 100%;
     }
 
-    .offers-carousel .slide-content a{
+    .offers-carousel .slide-content a {
         padding-top: 15px;
     }
-    .offers-carousel .slide-content p{
+
+    .offers-carousel .slide-content p {
         padding-bottom: 10px;
     }
 
 
-    .offers-carousel .slide-content h1{
+    .offers-carousel .slide-content h1 {
         font-size: 40px;
         line-height: 40px;
     }
@@ -1366,28 +1717,43 @@ footer a,
         display: block;
     }
 
-    .promo-content{
+    .promo-content {
         gap: 100px;
         justify-content: space-between !important;
     }
-   
+
 }
 
 @media screen and (max-width: 1200px) {
-    
+
+    .contact-form form input {
+        width: 100%;
+    }
+
+    .full-services {
+        flex-wrap: wrap;
+    }
+
+    .full-service-card {
+        flex: 0 1 calc(50% - 20px);
+        /* Each item takes 50% width */
+        box-sizing: border-box;
+    }
 
     .container {
         padding: 0 20px;
     }
-    .side-nav-carousel{
+
+    .side-nav-carousel {
         display: block;
     }
 
-    .side-nav{
+    .side-nav {
         display: none;
     }
-    .hero-content{
+
+    .hero-content {
         flex-wrap: wrap;
     }
- 
+
 }

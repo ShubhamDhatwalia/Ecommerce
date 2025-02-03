@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>about</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
+
 <body>
-    
+
+
     <header>
         <section class="promo-header" data-aos="zoom-in">
             <div class="container">
                 <div class="promo-content">
-                  
+
                     <marquee class="ticker promo-marquee" onmouseover="this.stop()" onmouseout="this.start()">
                         <div class="promo-message ">
-                            <p >Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! <a href="#" class="promo-link">Shop Now</a> </p>
-                            
+                            <p>Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%! <a href="#"
+                                    class="promo-link">Shop Now</a> </p>
+
                         </div>
-                     </marquee>
-                        
-                    
-    
+                    </marquee>
+
+
+
                     <div class="language-selector">
                         <select name="language" id="language-dropdown">
                             <option value="en">English</option>
@@ -30,53 +47,53 @@
                     </div>
                 </div>
             </div>
-    
-            
+
+
         </section>
-    
+
         <section class="main-header" data-aos="zoom-in" data-aos-duration="1000">
             <div class="container">
-    
+
                 <div class="header-content">
-                    <a href="#" class="logo">Exclusive</a>
+                    <a href="home.html" class="logo">Exclusive</a>
                     <nav class="main-navigation">
-    
+
                         <ul class="navigation-menu">
-                            <li><a href="#home" class="menu-link">Home</a></li>
-                            <li><a href="#about" class="menu-link">About</a></li>
-                            <li><a href="#contact" class="menu-link">Contact</a></li>
-                            <li><a href="#signup" class="menu-link">Sign Up</a></li>
+                            <li><a href="home.html" class="menu-link">Home</a></li>
+                            <li><a href="about.html" class="menu-link">About</a></li>
+                            <li><a href="contact.html" class="menu-link">Contact</a></li>
+                            <li><a href="register.html" class="menu-link">Sign Up</a></li>
                         </ul>
                     </nav>
                     <div class="header-actions">
-    
+
                         <form action="#" class="search-bar">
                             <input type="text" placeholder="What are you looking for?" class="search-input">
-                            <button type="submit" class="search-btn"><img src="./assests/search-icon.svg" alt="Search Icon"
-                                    class="search-icon"></button>
+                            <button type="submit" class="search-btn"><img src="./assests/search-icon.svg"
+                                    alt="Search Icon" class="search-icon"></button>
                         </form>
-    
+
                         <div class="user-menu">
-    
-    
-    
+
+
+
                             <a href="#wishlist" class="wishlist-link"><img src="./assests/favorite-icon.svg"
                                     alt="Wishlist Icon"></a>
                             <a href="#cart" class="cart-link"><img src="./assests/cart-icon.svg" alt="Cart Icon"></a>
-    
+
                             <a href="#" class="menu-btn"><i class="fa-solid fa-bars"></i></a>
                         </div>
                     </div>
                 </div>
-    
-                
-               
+
+
+
             </div>
         </section>
-    
+
         <div class="overlay">
             <div class="overlay-content">
-    
+
                 <a href="#" class="closebtn">&times;</a>
                 <ul class="navigation-menu">
                     <li>
@@ -86,24 +103,326 @@
                                     alt="Search Icon" class="search-icon"></button>
                         </form>
                     </li>
-                    <li><a href="#home" class="menu-link">Home</a></li>
-                    <li><a href="#about" class="menu-link">About</a></li>
-                    <li><a href="#contact" class="menu-link">Contact</a></li>
-                    <li><a href="#signup" class="menu-link">Sign Up</a></li>
+                    <li><a href="home.html" class="menu-link">Home</a></li>
+                    <li><a href="about.html" class="menu-link">About</a></li>
+                    <li><a href="contact.html" class="menu-link">Contact</a></li>
+                    <li><a href="register.html" class="menu-link">Sign Up</a></li>
                 </ul>
             </div>
         </div>
-        
-       </header>
-    
-    <section class="story-section">
+
+    </header>
+
+
+    <section class="about">
 
         <div class="container">
-            <ul class="beadcrumb">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">about</a></li>
+            <ul class="breadcrumb" data-aos="fade-down" >
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">about</a></li>
             </ul>
+
+
+            <div class="story" data-aos="fade-up" >
+                <div class="story-content">
+                    <h1>Our Story</h1>
+                    <p>Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an active
+                        presense in Bangladesh. Supported by wide range of tailored marketing, data and service
+                        solutions, Exclusive has 10,500 sallers and 300 brands and serves 3 millioons customers across
+                        the region. </p>
+
+                    <p>Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a
+                        diverse assotment in categories ranging from consumer.</p>
+                </div>
+
+                <div class="story-image">
+                    <img src="./assests/about-story.png" alt="" data-aos="zoom-in" >
+                </div>
+            </div>
+
+
+            <div class="full-services"  >
+                <div class="full-service-card">
+                   <div class="card" data-aos="flip-left">
+                    <img src="./assests/sallers-active.png" alt="">
+                    <h6>10.6K</h6>
+                    <p>Sallers active our site</p>
+                   </div>
+                </div>
+
+                <div class="full-service-card">
+                  <div class="card" data-aos="flip-left" >
+                    <img src="./assests/sallers-active.png" alt="">
+                    <h6>10.6K</h6>
+                    <p> Monthly product sales</p>
+                  </div>
+                </div>
+
+                <div class="full-service-card">
+                  <div class="card" data-aos="flip-right">
+                    <img src="./assests/sallers-active.png" alt="">
+                    <h6>10.6K</h6>
+                    <p>Customer active in our sites</p>
+                  </div>
+                </div>
+
+                <div class="full-service-card">
+                   <div class="card" data-aos="flip-right"> 
+                    <img src="./assests/sallers-active.png" alt="">
+                    <h6>10.6K</h6>
+                    <p>Anual gross sale in our site</p>
+                   </div>
+                </div>
+            </div>
+
         </div>
     </section>
+
+
+
+    <section class="team">
+
+        <div class="container">
+            <div class="team-carousel swiper">
+
+                <div class="swiper-wrapper">
+                    <div class="team-card swiper-slide">
+
+                      <div class="card">
+                        <div class="team-image">
+                            <img src="./assests/team1.png" alt="">
+                        </div>
+
+                        <div class="team-details">
+                            <h6 class="team-name">Tom Cruise</h6>
+                            <p team-designation>Founder & Chairman</p>
+
+                            <div class="team-contacts">
+                                <a href="#"><img src="./assests/twitter-dark.png" alt=""></a>
+                                <a href="#"> <img src="./assests/instgram-dark.png" alt=""></a>
+                                <a href="#"><img src="./assests/linkedin-dark.png" alt=""></a>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="team-card swiper-slide">
+
+                        <div class="card">
+                            <div class="team-image">
+                                <img src="./assests/team2.png" alt="">
+                            </div>
+
+                            <div class="team-details">
+                                <h6 class="team-name">Emma Watson</h6>
+                                <p team-designation>Managing Director</p>
+
+                                <div class="team-contacts">
+                                    <a href="#"><img src="./assests/twitter-dark.png" alt=""></a>
+                                    <a href="#"> <img src="./assests/instgram-dark.png" alt=""></a>
+                                    <a href="#"><img src="./assests/linkedin-dark.png" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="team-card swiper-slide">
+
+                     <div class="card">
+                        <div class="team-image">
+                            <img src="./assests/team3.png" alt="">
+                        </div>
+
+                        <div class="team-details">
+                            <h6 class="team-name">Will Smith</h6>
+                            <p team-designation>Product Designer</p>
+
+                            <div class="team-contacts">
+                                <a href="#"><img src="./assests/twitter-dark.png" alt=""></a>
+                                <a href="#"> <img src="./assests/instgram-dark.png" alt=""></a>
+                                <a href="#"><img src="./assests/linkedin-dark.png" alt=""></a>
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+
+                    <div class="team-card swiper-slide">
+
+                     <div class="card">
+                        <div class="team-image">
+                            <img src="./assests/team1.png" alt="">
+                        </div>
+
+                        <div class="team-details">
+                            <h6 class="team-name">Tom Cruise</h6>
+                            <p team-designation>Founder & Chairman</p>
+
+                            <div class="team-contacts">
+                                <a href="#"><img src="./assests/twitter-dark.png" alt=""></a>
+                                <a href="#"> <img src="./assests/instgram-dark.png" alt=""></a>
+                                <a href="#"><img src="./assests/linkedin-dark.png" alt=""></a>
+                            </div>
+                        </div>
+                     </div>
+                    </div>
+
+                    <div class="team-card swiper-slide">
+
+                        <div class="card">
+                           <div class="team-image">
+                               <img src="./assests/team1.png" alt="">
+                           </div>
+   
+                           <div class="team-details">
+                               <h6 class="team-name">Tom Cruise</h6>
+                               <p team-designation>Founder & Chairman</p>
+   
+                               <div class="team-contacts">
+                                   <a href="#"><img src="./assests/twitter-dark.png" alt=""></a>
+                                   <a href="#"> <img src="./assests/instgram-dark.png" alt=""></a>
+                                   <a href="#"><img src="./assests/linkedin-dark.png" alt=""></a>
+                               </div>
+                           </div>
+                        </div>
+                       </div>
+
+                       <div class="team-card swiper-slide">
+
+                        <div class="card">
+                           <div class="team-image">
+                               <img src="./assests/team1.png" alt="">
+                           </div>
+   
+                           <div class="team-details">
+                               <h6 class="team-name">Tom Cruise</h6>
+                               <p team-designation>Founder & Chairman</p>
+   
+                               <div class="team-contacts">
+                                   <a href="#"><img src="./assests/twitter-dark.png" alt=""></a>
+                                   <a href="#"> <img src="./assests/instgram-dark.png" alt=""></a>
+                                   <a href="#"><img src="./assests/linkedin-dark.png" alt=""></a>
+                               </div>
+                           </div>
+                        </div>
+                       </div>
+
+                </div>
+                <div class="team-pagination swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div class="container">
+            <div class="featured-services">
+                <div data-aos="zoom-in" data-aos-duration="1500">
+                    <img src="./assests/free-fast-delivery.png">
+                    <h5>FREE AND FAST DELIVERY</h5>
+                    <p>Free delivery for all orders over $140</p>
+                </div>
+    
+                <div data-aos="zoom-in" data-aos-duration="1500">
+                    <img src="./assests/customer-service.png">
+                    <h5>FREE AND FAST DELIVERY</h5>
+                    <p>Free delivery for all orders over $140</p>
+                </div>
+    
+    
+                <div data-aos="zoom-in" data-aos-duration="1500">
+                    <img src="./assests/guarantee.png">
+                    <h5>FREE AND FAST DELIVERY</h5>
+                    <p>Free delivery for all orders over $140</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="exclusive-section" data-aos="zoom-in" data-aos-duration="1500">
+                    <h1 class="footer-logo">Exclusive </h1>
+                    <h5>Subscribe</h5>
+                    <p>Get 10% off your first order</p>
+                    <div class="subscribe">
+                        <input type="email" placeholder="Enter your mail">
+                        <img src="./assests/icon-send.png">
+                    </div>
+                </div>
+
+                <div class="support-section" data-aos="zoom-in" data-aos-duration="1500">
+                    <h5>Support</h5>
+
+                    <p>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
+                    <a href="mailto:exclusive@gmail.com"> exclusive@gmail.com </a>
+                    <a href="tel:+88015-88888-9999">+88015-88888-9999</a>
+                </div>
+
+                <div class="account-section" data-aos="zoom-in" data-aos-duration="1500">
+                    <h5>Account</h5>
+
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Login/Register</a></li>
+                        <li><a href="#"> Cart </a></li>
+                        <li><a href="#"> Wishlist</a></li>
+
+                        <li><a href="#"> Shop</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="quick-link-section" data-aos="zoom-in" data-aos-duration="1500">
+                    <h5>Quick Link</h5>
+
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#"> FAQ </a></li>
+                        <li><a href="#"> Contact</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="download-app-section" data-aos="zoom-in" data-aos-duration="1500">
+                    <h5>Download App</h5>
+
+                    <p>Save $3 with App New User Only</p>
+
+                    <div class="download-links">
+                        <img src="./assests/Qr Code.png">
+                        <div class="download-btn">
+                            <img src="./assests/plastore-btn.png">
+                            <img src="./assests/appstore-btn.png">
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#"><img src="./assests/facebook.png"></a>
+                        <a href="#"><img src="./assests/twitter.png"></a>
+                        <a href="#"><img src="./assests/instagram.png"></a>
+                        <a href="#"><img src="./assests/linkedin.png"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright" >
+                <img src="./assests/icon-copyright.png" alt="">
+                <p>Copyright Rimel 2022. All right reserved</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="/about.js"></script>
+
 </body>
+
 </html>
