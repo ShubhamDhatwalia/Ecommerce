@@ -1,6 +1,10 @@
 import { productData } from "./productData.js";
 AOS.init();
 
+
+
+
+
 var dropdown = document.getElementsByClassName("dropdown-btn");
 
 
@@ -170,6 +174,9 @@ var offersCarousel = new Swiper(".offers-carousel", {
 
 
 
+
+
+
 const body = document.body;
 
 document.querySelector(".menu-btn").addEventListener("click", () => {
@@ -221,3 +228,5 @@ var x = setInterval(function() {
 
   }
 }, 1000);
+
+
