@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-
+    <title>register</title>
     <link rel="stylesheet" href="style.css">
 
     <link
@@ -16,12 +16,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    
 </head>
+
 <body>
-
-
 
     <header>
         <section class="promo-header" data-aos="zoom-in">
@@ -113,71 +110,42 @@
     </header>
 
 
+    <section class="sign-up">
 
-    <section class="contact">
         <div class="container">
-            <ul class="breadcrumb" data-aos="fade-down" >
-               
-            </ul>
+            <div class="sign-up-form">
 
-
-
-            <div class="contact-component"  >
-                <div class="contact-details"  data-aos="zoom-in">
-
-                    <div class="call-to-us" >
-                       <div class="heading">
-                        <img src="assests/icons-phone.png">
-                        <h4>Call To Us</h4>
-                       </div>
-
-                       <p>We are available 24/7, 7 days a week.</p>
-                       <p>Phone: <a href="tel:+8801611112222">+8801611112222</a></p>
-                    </div>
-
-                    <div class="write-to-us" >
-                        <div class="heading">
-                            <img src="./assests/icons-mail.png">
-                            <h4>Write To Us</h4>
-                        </div>
-
-                        <p>Fill out our form and we will contact you within 24 hours.</p>
-                        <p>Emails: <a href="mailto:support@exclusive.com" >support@exclusive.com</a>
-                        <p>Emails: <a href="mailto:support@exclusive.com">support@exclusive.com</a>
-                    </div>
+                <div class="img-bg">
+                    <img src="./assests/register-page-image.png" alt="">
                 </div>
 
-                <div class="contact-form" data-aos="zoom-in">
+
+                <div class="register-form">
+                    <h3>Create an account</h3>
+                    <p>Enter your details below</p>
 
                     <form action="">
-                        <div class="user-details">
-                            <div class="name-group">
-                                <input type="text" id="contact-name" placeholder="Your Name *" onkeyup="validateName()">
-                                <span id="name-error">required</span>
-                            </div>
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Email or Phone">
+                        <input type="password" name="" id="" placeholder="Password">
 
-                            <div class="mail-group">
-                                <input type="email" name="" id="contact-mail" placeholder="Your Email *" required>
-                                <span id="mail-error">required</span>
-                            </div>
-                            <div class="phone-group">
-                                <input type="tel" name="" id="contact-phone" placeholder="Your Phone *" required>
-                                <span id="phone-error">required</span>
-                            </div>
-                        </div>
+                        <button type="submit" class="btn">Create Account</button>
 
-                        <textarea placeholder="Your message" ></textarea>
-
-                        <div>
-                            <button type="submit" class="btn send-message-btn ">Send Message</button>
-                        </div>
+                        
                     </form>
 
+                    <button class="btn google-sign-up-btn"> <img src="./assests/google-icon.png" alt=""> <span>Sign up with Google</span> </button>
+
+                    
+                    <div class="already-registered">
+                        <p>Already have account?</p>
+                        <a href="login.html">Log in</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
+    </section>
 
 
 
@@ -250,16 +218,15 @@
                 </div>
             </div>
 
-            <div class="copyright" >
+            <div class="copyright">
                 <img src="./assests/icon-copyright.png" alt="">
                 <p>Copyright Rimel 2022. All right reserved</p>
             </div>
         </div>
     </footer>
 
+    <script type="module" src="/register.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script type="module" src="/contact.js" ></script>
-    
 </body>
+
 </html>
