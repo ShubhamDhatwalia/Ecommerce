@@ -16,6 +16,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+
 </head>
 
 <body>
@@ -113,30 +116,46 @@
     <section class="sign-up">
 
         <div class="container">
-            <div class="sign-up-form">
+            <div class="sign-up-form" >
 
                 <div class="img-bg">
-                    <img src="./assests/register-page-image.png" alt="">
+                    <img src="./assests/register-page-image.png" alt="" data-aos="zoom-in" data-aos-duration="1000" >
                 </div>
 
 
-                <div class="register-form">
+                <div class="register-form" data-aos="zoom-in" data-aos-duration="1000">
                     <h3>Create an account</h3>
                     <p>Enter your details below</p>
 
-                    <form action="">
-                        <input type="text" placeholder="Name">
-                        <input type="text" placeholder="Email or Phone">
-                        <input type="password" name="" id="" placeholder="Password">
+                    <form >
+                        <div class="name-group">
+                            <input type="text" placeholder="Name" id="user-name" onkeyup="validateName()">
+                            <span id="name-error">required</span>
+                        </div>
+
+                        <div class="mail-phone-group">
+                            <input type="text" placeholder="Email or Phone" id="user-mail-phone"
+                                onkeyup="validateMailPhone()">
+                            <span id="mail-phone-error">required</span>
+                        </div>
+
+
+                        <div class="password-group">
+                            <input type="password" name="" id="user-password" placeholder="Password"
+                                onkeyup="validatePassword()">
+                            <span id="password-error">required</span>
+
+                        </div>
 
                         <button type="submit" class="btn">Create Account</button>
 
-                        
+
                     </form>
 
-                    <button class="btn google-sign-up-btn"> <img src="./assests/google-icon.png" alt=""> <span>Sign up with Google</span> </button>
+                    <button class="btn google-sign-up-btn"> <img src="./assests/google-icon.png" alt=""> <span>Sign up
+                            with Google</span> </button>
 
-                    
+
                     <div class="already-registered">
                         <p>Already have account?</p>
                         <a href="login.html">Log in</a>
@@ -152,7 +171,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="exclusive-section" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="exclusive-section" data-aos="zoom-in" data-aos-duration="1000">
                     <h1 class="footer-logo">Exclusive </h1>
                     <h5>Subscribe</h5>
                     <p>Get 10% off your first order</p>
@@ -162,7 +181,7 @@
                     </div>
                 </div>
 
-                <div class="support-section" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="support-section" data-aos="zoom-in" data-aos-duration="1000">
                     <h5>Support</h5>
 
                     <p>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
@@ -170,7 +189,7 @@
                     <a href="tel:+88015-88888-9999">+88015-88888-9999</a>
                 </div>
 
-                <div class="account-section" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="account-section" data-aos="zoom-in" data-aos-duration="1000">
                     <h5>Account</h5>
 
                     <ul>
@@ -184,7 +203,7 @@
                     </ul>
                 </div>
 
-                <div class="quick-link-section" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="quick-link-section" data-aos="zoom-in" data-aos-duration="1000">
                     <h5>Quick Link</h5>
 
                     <ul>
@@ -196,7 +215,7 @@
                     </ul>
                 </div>
 
-                <div class="download-app-section" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="download-app-section" data-aos="zoom-in" data-aos-duration="1000">
                     <h5>Download App</h5>
 
                     <p>Save $3 with App New User Only</p>
@@ -225,8 +244,9 @@
         </div>
     </footer>
 
-    <script type="module" src="/register.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script  src="/register.js"></script>
+    
 </body>
 
 </html>

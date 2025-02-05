@@ -1407,16 +1407,16 @@ footer a,
 
 form .user-details .name-group,
 .mail-group,
-.phone-group {
+.phone-group , .register-form form .name-group, .mail-phone-group, .password-group{
     position: relative;
     font-family: "Poppins", sans-serif;
-    font-size: 10px;
+    font-size: 12px;
 }
 
-form .user-details span {
+form .user-details span , .register-form form span{
     position: absolute;
     left: 0;
-    bottom: -15px;
+    bottom: -20px;
     color: red;
     visibility: hidden;
 }
@@ -1487,6 +1487,11 @@ form .user-details span {
     display: flex;
     flex-direction: column;
     gap: 32px;
+}
+
+.contact-form form input:focus, form textarea:focus{
+    outline: none;
+    
 }
 
 .contact-form form input,
@@ -1596,7 +1601,7 @@ textarea {
     height: 32px;
     border-bottom: 0.5px rgb(0, 0, 0, 0.3) solid;
 
-
+    width: 100%;
     font-family: "Poppins";
     font-size: 16px;
     font-style: normal;
