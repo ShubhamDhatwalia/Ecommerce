@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>WishList</title>
+
     <link rel="stylesheet" href="style.css">
 
     <link
@@ -15,11 +17,14 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
+
 <body>
-    
+
+
     <header data-aos="fade-down" data-aos-duration="1000">
-        <section class="promo-header" >
+        <section class="promo-header">
             <div class="container">
                 <div class="promo-content">
 
@@ -45,7 +50,7 @@
 
         </section>
 
-        <section class="main-header" >
+        <section class="main-header">
             <div class="container">
 
                 <div class="header-content">
@@ -71,9 +76,10 @@
 
 
 
-                            <a href="#wishlist" class="wishlist-link"><img src="./assests/favorite-icon.svg"
+                            <a href="wishList.html" class="wishlist-link"><img src="./assests/favorite-icon.svg"
                                     alt="Wishlist Icon"></a>
-                            <a href="#cart" class="cart-link"><img src="./assests/cart-icon.svg" alt="Cart Icon"></a>
+                            <a href="cart.html" class="cart-link"><img src="./assests/cart-icon.svg"
+                                    alt="Cart Icon"></a>
 
                             <a href="#" class="menu-btn"><i class="fa-solid fa-bars"></i></a>
                         </div>
@@ -108,59 +114,61 @@
     </header>
 
 
-    <section class="login">
+
+    <section class="wishList">
 
         <div class="container">
-            <div class="login-form" >
-
-                <div class="img-bg">
-                    <img src="./assests/register-page-image.png" alt="" data-aos="zoom-in" data-aos-duration="1000" >
+            <div class="inner-heading">
+                <div class="inner-heading-name">
+                    <h3>Wishlist (<span class="wishList-count">4</span>)</h3>
                 </div>
 
-
-                <div class="signin-form" data-aos="zoom-in" data-aos-duration="1000">
-                    <h3>Log in to Exclusive</h3>
-                    <p>Enter your details below</p>
-
-                    <form >
-
-
-                        <div class="mail-phone-group">
-                            <input type="text" placeholder="Email or Phone" id="user-mail-phone"
-                                onkeyup="validateMailPhone()">
-                            <span id="mail-phone-error">required</span>
-                        </div>
-
-
-                        <div class="password-group">
-                            <input type="password" name="" id="user-password" placeholder="Password"
-                                onkeyup="validatePassword()">
-                            <span id="password-error">required</span>
-
-                        </div>
-
-                        
-                        <div class="login-forget-btn">
-                            <button type="submit" class="btn login-btn">Log in</button>
-
-                            <a href="#" class="forget-link">Forget Password?</a>
-                        </div>
-
-
-                    </form>
-
-                   
-                   
+                <div>
+                    <button class="wishList-btns btn">Move All To Bag</button>
                 </div>
             </div>
+
+
+            <div class="wishList-items">
+                <div class="productItem">
+
+                    <div class="item-card">
+
+                        <div class="item-img">
+                            <img src="./assests/item1.png" class="product-img" alt="">
+
+                            <img src="./assests/fill-delete.png" class="fill-heart" alt="">
+
+                            <button class=" add-to-cart">Add to Cart <button>
+                                    
+                        </div>
+
+                        <div class="item-details">
+                            <h4 class="product.name">${product.productName}</h4>
+
+                            <div class="price">
+                                <h4>$ ${product.price} <span class="discounted-price">$${product.originalPrice}</span>
+                                </h4>
+                            </div>
+
+                            
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
         </div>
 
     </section>
 
-    <footer >
+
+
+    <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="exclusive-section" >
+                <div class="exclusive-section">
                     <h1 class="footer-logo">Exclusive </h1>
                     <h5>Subscribe</h5>
                     <p>Get 10% off your first order</p>
@@ -170,7 +178,7 @@
                     </div>
                 </div>
 
-                <div class="support-section" >
+                <div class="support-section">
                     <h5>Support</h5>
 
                     <p>111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
@@ -178,7 +186,7 @@
                     <a href="tel:+88015-88888-9999">+88015-88888-9999</a>
                 </div>
 
-                <div class="account-section" >
+                <div class="account-section">
                     <h5>Account</h5>
 
                     <ul>
@@ -192,7 +200,7 @@
                     </ul>
                 </div>
 
-                <div class="quick-link-section" >
+                <div class="quick-link-section">
                     <h5>Quick Link</h5>
 
                     <ul>
@@ -204,7 +212,7 @@
                     </ul>
                 </div>
 
-                <div class="download-app-section" >
+                <div class="download-app-section">
                     <h5>Download App</h5>
 
                     <p>Save $3 with App New User Only</p>
@@ -226,7 +234,7 @@
                 </div>
             </div>
 
-            <div class="copyright" >
+            <div class="copyright">
                 <img src="./assests/icon-copyright.png" alt="">
                 <p>Copyright Rimel 2022. All right reserved</p>
             </div>
@@ -234,7 +242,7 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script  src="/login.js"></script>
-    
+    <script src="wishList.js"></script>
 </body>
+
 </html>

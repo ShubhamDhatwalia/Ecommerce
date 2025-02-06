@@ -1,5 +1,9 @@
 import { productData } from "./productData.js";
-AOS.init();
+
+
+AOS.init({
+  once: true,
+});
 
 
 
@@ -7,8 +11,8 @@ AOS.init();
 const navLinks = document.querySelectorAll(".menu-link")
 const currentPage = window.location.pathname.split("/").pop();
 
-navLinks.forEach((nav)=>{
-  if(nav.getAttribute("href") === currentPage){
+navLinks.forEach((nav) => {
+  if (nav.getAttribute("href") === currentPage) {
     nav.classList.add("visited");
   }
 })
@@ -45,7 +49,12 @@ for (i = 0; i < dropdown.length; i++) {
 
 
 
-productData.forEach((product) => {
+
+
+localStorage.setItem("productData", JSON.stringify(productData));
+const storedProductData = JSON.parse(localStorage.getItem("productData"));
+
+storedProductData.forEach((product) => {
   const cardHtml = `
 
   <div class="productSlides swiper-slide" data-aos="flip-left">
@@ -56,7 +65,7 @@ productData.forEach((product) => {
                         <div class="item-img">
                             <img src="${product.productImage}" class="product-img" alt="">
 
-                            <img src="./assests/fill-heart.png" class="fill-heart" alt="">
+                            <i class="fill-heart fa-regular fa-heart "data-product-name="${product.productName}"></i>
                             <img src="./assests/fill-eye.png"  class="fill-eye" alt="">
                             <button class=" add-to-cart">Add to Cart <button>
                             <div class="discount-percentage">
@@ -65,7 +74,7 @@ productData.forEach((product) => {
                         </div>
 
                         <div class="item-details">
-                            <h4 class="product.name">${product.productName}</h4>
+                            <h4 class="product-name">${product.productName}</h4>
 
                             <div class="price">
                                 <h4>$ ${product.price} <span class="discounted-price">$${product.originalPrice}</span></h4>
@@ -91,6 +100,63 @@ productData.forEach((product) => {
 })
 
 
+
+
+
+function toggleWishList(product, heartIcon) {
+  let wishlist = JSON.parse(localStorage.getItem("wishlistData")) || [];
+  const index = wishlist.findIndex(item => item.productName === product.productName);
+
+  if (index === -1) {
+      
+      wishlist.push(product);
+      heartIcon.classList.remove("fa-regular");
+      heartIcon.classList.add("fa-solid");
+      heartIcon.style.color = "#e60505";
+      
+  } else {
+      
+      wishlist.splice(index, 1);
+      heartIcon.classList.remove("fa-solid");
+      heartIcon.classList.add("fa-regular");
+      heartIcon.style.color = "";
+      
+  }
+
+  localStorage.setItem("wishlistData", JSON.stringify(wishlist));
+}
+
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("fill-heart")) {
+    const productName = e.target.closest(".productItem").querySelector(".product-name").textContent.trim();
+    let selectedProduct = storedProductData.find(item => item.productName == productName);
+
+    if (selectedProduct) {
+      toggleWishList(selectedProduct, e.target);
+    }
+  }
+})
+
+
+let wishlist = JSON.parse(localStorage.getItem("wishlistData")) || [];
+
+wishlist.forEach(product =>{
+
+  const heartIcon = document.querySelector(`[data-product-name="${product.productName}"]`);
+
+  if (heartIcon) {
+    if (storedProductData.some(item => item.productName === product.productName)) {
+        heartIcon.classList.remove("fa-regular");
+        heartIcon.classList.add("fa-solid");
+        heartIcon.style.color = "#e60505";
+    } else {
+        heartIcon.classList.remove("fa-solid");
+        heartIcon.classList.add("fa-regular");
+        heartIcon.style.color = "";
+    }
+  }
+})
 
 
 const swiperConfig = {
@@ -190,9 +256,9 @@ var offersCarousel = new Swiper(".offers-carousel", {
 const body = document.body;
 
 document.querySelector(".menu-btn").addEventListener("click", () => {
-  document.querySelector(".overlay").style.height = "100%";
+  document.querySelector(".overlay").style.height = "100vh";
   body.classList.add("no-scroll");
-  
+
 })
 
 
@@ -202,22 +268,22 @@ document.querySelector(".closebtn").addEventListener("click", () => {
 })
 
 
-const countDownDate = new Date("Feb 5, 2025 15:37:25").getTime();
+const countDownDate = new Date("Feb 9, 2025 15:37:25").getTime();
 
 
-var x = setInterval(function() {
+var x = setInterval(function () {
 
   var now = new Date().getTime();
-   
+
   var distance = countDownDate - now;
-    
-  
+
+
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  
+
+
   document.getElementById("days").innerHTML = String(days).padStart(2, "0");
   document.getElementById("banner-days").innerHTML = String(days).padStart(2, "0");
 
@@ -230,11 +296,11 @@ var x = setInterval(function() {
   document.getElementById("seconds").innerHTML = String(seconds).padStart(2, "0");
   document.getElementById("banner-seconds").innerHTML = String(seconds).padStart(2, "0");
 
- 
+
   if (distance < 0) {
     clearInterval(x);
-   document.getElementsByClassName("duration").style.display = 'none';
-   document.getElementsByClassName("time").style.display = 'none';
+    document.getElementsByClassName("duration").style.display = 'none';
+    document.getElementsByClassName("time").style.display = 'none';
 
   }
 }, 1000);

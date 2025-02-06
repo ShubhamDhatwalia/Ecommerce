@@ -131,6 +131,10 @@ a {
 
 }
 
+header {
+    position: relative;
+    z-index: 1;
+}
 
 .promo-header {
     background-color: #000;
@@ -324,7 +328,7 @@ a {
     position: absolute;
     top: 50px;
     right: 45px;
-    font-size: 60px;
+    font-size: 40px;
     color: #FAFAFA;
     text-decoration: none;
     opacity: 0.8;
@@ -351,13 +355,21 @@ a {
     opacity: 1;
 }
 
+.hero-section {
+    position: relative;
+    z-index: 0;
+}
 
+.side-nav-carousel {
+    border-bottom: 0.5px rgb(0, 0, 0, 0.3) solid;
+
+}
 
 .side-nav-carousel .menu {
 
     list-style: none;
-
-    padding: 26px 0;
+    padding: 10px 0;
+    
 }
 
 .side-nav-carousel .menu .dropdown-btn {
@@ -759,6 +771,12 @@ a {
     position: absolute;
     top: 12px;
     right: 12px;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center
 }
 
 .fill-eye:hover,
@@ -1407,13 +1425,21 @@ footer a,
 
 form .user-details .name-group,
 .mail-group,
-.phone-group , .register-form form .name-group, .mail-phone-group, .password-group{
+.phone-group,
+.register-form form .name-group,
+.mail-phone-group,
+.password-group,
+.signin-form form .name-group,
+.mail-phone-group,
+.password-group {
     position: relative;
     font-family: "Poppins", sans-serif;
     font-size: 12px;
 }
 
-form .user-details span , .register-form form span{
+form .user-details span,
+.register-form form span,
+.signin-form form span {
     position: absolute;
     left: 0;
     bottom: -20px;
@@ -1489,9 +1515,10 @@ form .user-details span , .register-form form span{
     gap: 32px;
 }
 
-.contact-form form input:focus, form textarea:focus{
+.contact-form form input:focus,
+form textarea:focus {
     outline: none;
-    
+
 }
 
 .contact-form form input,
@@ -1539,17 +1566,21 @@ textarea {
 
 /* ----------------- signUp Page------------------- */
 
-.sign-up {
+.sign-up,
+.login {
     margin-top: 60px;
     position: relative;
 }
 
-.sign-up-form {
+.sign-up-form,
+.login-form {
     display: flex;
-    gap: 129px;
+    gap: 20px;
+    align-items: center;
 }
 
-.sign-up-form .img-bg {
+.sign-up-form .img-bg,
+.login-form .img-bg {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -1557,27 +1588,35 @@ textarea {
     width: 50%;
 }
 
-.register-form {
+.register-form,
+.signin-form {
     width: 371px;
     margin-left: auto;
-    padding: 130px 0;
+    padding: 130px 0 130px 0;
 
 }
 
-.sign-up-form img {
+.signin-form {
+    padding: 220px 0 220px 0;
+}
+
+.sign-up-form img,
+.login-form img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.register-form p {
+.register-form p,
+.signin-form p {
     font-size: 16px;
     padding-top: 24px;
     font-weight: 400;
     line-height: 24px;
 }
 
-.register-form h3 {
+.register-form h3,
+.signin-form h3 {
 
     font-size: 36px;
     font-weight: 500;
@@ -1585,18 +1624,21 @@ textarea {
     letter-spacing: 1.44px;
 }
 
-.register-form form {
+.register-form form,
+.signin-form form {
     padding-top: 40px;
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-.register-form form input:focus {
+.register-form form input:focus,
+.signin-form form input:focus {
     outline: none;
 }
 
-.register-form form input {
+.register-form form input,
+.signin-form form input {
     border: none;
     height: 32px;
     border-bottom: 0.5px rgb(0, 0, 0, 0.3) solid;
@@ -1607,7 +1649,7 @@ textarea {
     font-style: normal;
     font-weight: 400;
     line-height: 24px;
-    
+
 }
 
 .google-sign-up-btn {
@@ -1649,7 +1691,70 @@ textarea {
     text-decoration-color: rgba(0, 0, 0, 0.7);
 }
 
+.login-forget-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forget-link {
+    color: #DB4444 !important;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+
+
+
+
+.wishList {
+    margin-top: 80px;
+}
+
+.wishList .inner-heading {
+    align-items: center;
+    padding-top: 0;
+}
+
+.wishList .inner-heading-name {
+    transform: none;
+}
+
+.wishList-btns {
+    padding: 16px 48px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    background: none;
+    color: #000;
+}
+
+.wishList .inner-heading-name h3,
+.wishList .inner-heading-name span {
+
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    line-height: 26px;
+    /* 130% */
+}
+
+.wishList-items {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+
+
 @media screen and (max-width: 425px) {
+
 
 
     .featured-thumbs .thumb-2 .thumb-description {
@@ -1678,6 +1783,9 @@ textarea {
 
 @media screen and (max-width:690px) {
 
+    .best-selling-carousel {
+        margin-bottom: 50px;
+    }
     .contact-component {
         flex-wrap: wrap;
         justify-content: center;
@@ -1787,6 +1895,29 @@ textarea {
 
 @media screen and (max-width: 930px) {
 
+    .offers-carousel {
+        margin-top: 0;
+    }
+    section{
+        margin-top: 60px !important;
+    }
+    .promo-header{
+        margin-top: 0 !important;
+    }
+    .main-header {
+        margin-top: 16px !important;
+    }
+
+    .register-form,
+    .signin-form {
+        margin: 0 auto;
+    }
+
+    .sign-up-form .img-bg,
+    .login-form .img-bg {
+        display: none;
+    }
+
     .story {
         flex-wrap: wrap;
     }
@@ -1871,6 +2002,20 @@ textarea {
 
 @media screen and (max-width: 1200px) {
 
+    .register-form,
+    .login-form {
+        padding: 0;
+    }
+
+    .sign-up-form .img-bg img,
+    .login-form .img-bg img {
+        height: auto;
+    }
+
+    .sign-up-form .img-bg,
+    .login-form .img-bg {
+        position: static;
+    }
 
     .contact-form form input {
         width: 100%;

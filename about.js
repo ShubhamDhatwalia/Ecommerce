@@ -1,5 +1,7 @@
 const body = document.body;
-AOS.init();
+AOS.init({
+  once: true,
+});
 
 
 
