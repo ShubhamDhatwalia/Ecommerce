@@ -51,112 +51,92 @@ for (i = 0; i < dropdown.length; i++) {
 
 
 
+// Store product data in localStorage
 localStorage.setItem("productData", JSON.stringify(productData));
 const storedProductData = JSON.parse(localStorage.getItem("productData"));
 
 storedProductData.forEach((product) => {
   const cardHtml = `
-
   <div class="productSlides swiper-slide" data-aos="flip-left">
-                        <div class="productItem">
-
-  <div class="item-card">
-
-                        <div class="item-img">
-                            <img src="${product.productImage}" class="product-img" alt="">
-
-                            <i class="fill-heart fa-regular fa-heart "data-product-name="${product.productName}"></i>
-                            <img src="./assests/fill-eye.png"  class="fill-eye" alt="">
-                            <button class=" add-to-cart">Add to Cart <button>
-                            <div class="discount-percentage">
-                                <p>${product.discountPercentage}</p>
-                            </div>
-                        </div>
-
-                        <div class="item-details">
-                            <h4 class="product-name">${product.productName}</h4>
-
-                            <div class="price">
-                                <h4>$ ${product.price} <span class="discounted-price">$${product.originalPrice}</span></h4>
-                            </div>
-
-                            <div class="ratting">
-                                <img src="./assests/ratting-star.svg" alt="">
-                                <p>( <span ratting-number>${product.ratingCount}</span> )</p>
-                            </div>
-                        </div>
-
-                        </div>
-                        </div>
-                        
-                    </div>
-  `;
-
-
+    <div class="productItem">
+      <div class="item-card">
+        <div class="item-img">
+          <img src="${product.productImage}" class="product-img" alt="">
+          <i class="fill-heart fa-regular fa-heart" data-product-name="${product.productName}"></i>
+          <img src="./assests/fill-eye.png" class="fill-eye" alt="">
+          <button class="add-to-cart">Add to Cart</button>
+          <div class="discount-percentage">
+            <p>${product.discountPercentage}</p>
+          </div>
+        </div>
+        <div class="item-details">
+          <h4 class="product-name">${product.productName}</h4>
+          <div class="price">
+            <h4>$${product.price} <span class="discounted-price">$${product.originalPrice}</span></h4>
+          </div>
+          <div class="ratting">
+            <img src="./assests/ratting-star.svg" alt="">
+            <p>(<span class="ratting-number">${product.ratingCount}</span>)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`;
 
   document.querySelector(".salesSwiper").innerHTML += cardHtml;
   document.querySelector(".bestSellingSwiper").innerHTML += cardHtml;
   document.querySelector(".productSwiper").innerHTML += cardHtml;
-})
+});
 
-
-
-
-
-function toggleWishList(product, heartIcon) {
+// Toggle wishlist function
+function toggleWishList(product) {
   let wishlist = JSON.parse(localStorage.getItem("wishlistData")) || [];
   const index = wishlist.findIndex(item => item.productName === product.productName);
 
   if (index === -1) {
-      
-      wishlist.push(product);
-      heartIcon.classList.remove("fa-regular");
-      heartIcon.classList.add("fa-solid");
-      heartIcon.style.color = "#e60505";
-      
+    wishlist.push(product);
   } else {
-      
-      wishlist.splice(index, 1);
-      heartIcon.classList.remove("fa-solid");
-      heartIcon.classList.add("fa-regular");
-      heartIcon.style.color = "";
-      
+    wishlist.splice(index, 1);
   }
 
   localStorage.setItem("wishlistData", JSON.stringify(wishlist));
+
+  // Update all instances of the same product
+  document.querySelectorAll(`[data-product-name="${product.productName}"]`).forEach((heartIcon) => {
+    if (index === -1) {
+      heartIcon.classList.remove("fa-regular");
+      heartIcon.classList.add("fa-solid");
+      heartIcon.style.color = "#e60505";
+    } else {
+      heartIcon.classList.remove("fa-solid");
+      heartIcon.classList.add("fa-regular");
+      heartIcon.style.color = "";
+    }
+  });
 }
 
-
+// Click event to toggle wishlist
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("fill-heart")) {
-    const productName = e.target.closest(".productItem").querySelector(".product-name").textContent.trim();
-    let selectedProduct = storedProductData.find(item => item.productName == productName);
+    const productName = e.target.getAttribute("data-product-name");
+    console.log(productName);
+    let selectedProduct = storedProductData.find(item => item.productName === productName);
 
     if (selectedProduct) {
-      toggleWishList(selectedProduct, e.target);
+      toggleWishList(selectedProduct);
     }
   }
-})
+});
 
-
+// Update wishlist UI on page load
 let wishlist = JSON.parse(localStorage.getItem("wishlistData")) || [];
-
-wishlist.forEach(product =>{
-
-  const heartIcon = document.querySelector(`[data-product-name="${product.productName}"]`);
-
-  if (heartIcon) {
-    if (storedProductData.some(item => item.productName === product.productName)) {
-        heartIcon.classList.remove("fa-regular");
-        heartIcon.classList.add("fa-solid");
-        heartIcon.style.color = "#e60505";
-    } else {
-        heartIcon.classList.remove("fa-solid");
-        heartIcon.classList.add("fa-regular");
-        heartIcon.style.color = "";
-    }
-  }
-})
+wishlist.forEach(product => {
+  document.querySelectorAll(`[data-product-name="${product.productName}"]`).forEach((heartIcon) => {
+    heartIcon.classList.remove("fa-regular");
+    heartIcon.classList.add("fa-solid");
+    heartIcon.style.color = "#e60505";
+  });
+});
 
 
 const swiperConfig = {
@@ -268,7 +248,7 @@ document.querySelector(".closebtn").addEventListener("click", () => {
 })
 
 
-const countDownDate = new Date("Feb 9, 2025 15:37:25").getTime();
+const countDownDate = new Date("Feb 15, 2025 15:37:25").getTime();
 
 
 var x = setInterval(function () {
@@ -299,8 +279,8 @@ var x = setInterval(function () {
 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementsByClassName("duration").style.display = 'none';
-    document.getElementsByClassName("time").style.display = 'none';
+    document.querySelector(".duration").style.display = 'none';
+    document.querySelector(".time").style.display = 'none';
 
   }
 }, 1000);

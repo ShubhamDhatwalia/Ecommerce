@@ -129,7 +129,7 @@ document.querySelector(".user-menu .cart-link  ").style.display = "none";
 
 
 document.querySelector(".menu-btn").addEventListener("click", () => {
-    document.querySelector(".overlay").style.height = "100%";
+    document.querySelector(".overlay").style.height = "100vh";
     body.classList.add("no-scroll");
     
   })

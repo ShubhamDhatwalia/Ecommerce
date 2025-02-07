@@ -362,6 +362,8 @@ header {
 
 .side-nav-carousel {
     border-bottom: 0.5px rgb(0, 0, 0, 0.3) solid;
+    position: relative;
+    z-index: 0;
 
 }
 
@@ -765,7 +767,7 @@ header {
 }
 
 .item-card .fill-heart,
-.fill-eye {
+.fill-eye , .fill-delete{
     width: 34px;
     height: 34px;
     position: absolute;
@@ -780,7 +782,7 @@ header {
 }
 
 .fill-eye:hover,
-.fill-heart:hover {
+.fill-heart:hover, .fill-delete:hover {
     cursor: pointer;
     transform: scale(1.2);
 }
@@ -1063,13 +1065,8 @@ header {
 
 footer {
     margin-top: 140px;
-    display: flex;
     background: #000;
     padding: 80px 0px 24px 0px;
-    flex-direction: column;
-
-    align-items: center;
-    gap: 60px;
 
 }
 
@@ -1100,12 +1097,13 @@ footer p {
     line-height: 24px;
 
 }
-
 .footer-content {
     display: flex;
-    justify-content: space-between;
-    gap: 87px;
+    justify-content: center;
+    gap: 93px;
     flex-wrap: wrap;
+    align-content: center;
+    row-gap: 40px;
 }
 
 footer input {
@@ -1718,6 +1716,7 @@ textarea {
 .wishList .inner-heading {
     align-items: center;
     padding-top: 0;
+    flex-wrap: nowrap !important;
 }
 
 .wishList .inner-heading-name {
@@ -1750,11 +1749,48 @@ textarea {
     gap: 30px;
     flex-wrap: wrap;
 }
+.empty-wishlist{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.empty-wishlist img{
+    width: 100%;
+    height: auto;
+}
 
+
+.just-for-you {
+    margin-top: 80px;
+}
+
+.just-for-you .heading{
+    justify-content: space-between;
+}
+
+.just-for-you .main-heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.products-for-you{
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
 
 
 @media screen and (max-width: 425px) {
 
+
+    .btn{
+        padding: 10px;
+    }
 
 
     .featured-thumbs .thumb-2 .thumb-description {
@@ -1771,8 +1807,11 @@ textarea {
         align-items: center;
         text-align: center;
     }
+    h6{
+        font-size: 25px !important;
+    }
 
-    h3 {
+    .inner-heading h3 {
         font-size: 25px !important;
     }
 
@@ -1783,6 +1822,9 @@ textarea {
 
 @media screen and (max-width:690px) {
 
+    h6{
+        font-size: 30px ;
+    }
     .best-selling-carousel {
         margin-bottom: 50px;
     }
@@ -1796,7 +1838,7 @@ textarea {
         box-sizing: border-box;
     }
 
-    h3 {
+    .inner-heading h3 {
         font-size: 30px;
     }
 
@@ -1895,12 +1937,18 @@ textarea {
 
 @media screen and (max-width: 930px) {
 
+    footer{
+        margin-top: 60px;
+    }
+
     .offers-carousel {
         margin-top: 0;
     }
-    section{
-        margin-top: 60px !important;
+    
+    .hero-section, .featured-section, .flash-sales, .categories-section, .this-month, .products-section, .featured-services, .contact-component, .contact{
+        margin-top: 60px;
     }
+
     .promo-header{
         margin-top: 0 !important;
     }
@@ -2003,7 +2051,7 @@ textarea {
 @media screen and (max-width: 1200px) {
 
     .register-form,
-    .login-form {
+    .signin-form {
         padding: 0;
     }
 
