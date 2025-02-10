@@ -148,28 +148,23 @@ wishlist.forEach(product => {
 
 let cartlist = JSON.parse(localStorage.getItem("cartlist")) ||[];
 
-document.addEventListener("click", (e) =>{
-  if(e.target.classList.contains("add-to-cart")){
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("add-to-cart")) {
     const productName = e.target.parentElement.children[1].getAttribute("data-product-name");
-    
-    let selectedProduct = storedProductData.find((item) => {
 
-      item.productName === productName
-    });
+
+    let selectedProduct = storedProductData.find(item => item.productName === productName);
     
+    const index = cartlist.findIndex(item => item.productName === productName);
     
 
-    const index = cartlist.findIndex((item) => {
-      item.productName === productName
-    });
-
-    if(index === -1){
+    if (index === -1) {
       cartlist.push(selectedProduct);
+      localStorage.setItem("cartlist", JSON.stringify(cartlist)); // Save updated cartlist
     }
   }
+});
 
-  localStorage.setItem("cartlist", JSON.stringify(cartlist));
-})
 
 
 

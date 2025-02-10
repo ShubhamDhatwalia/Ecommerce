@@ -65,6 +65,13 @@ function addToWishlistUI(product) {
 
 
 
+
+
+
+
+
+
+
 // Function to remove a specific wishlist item dynamically (no full re-render)
 function removeFromWishlistUI(productName) {
   const productElement = document.querySelector(`.productItem[data-product-name="${productName}"]`);
@@ -119,8 +126,8 @@ function renderProductsForYou() {
   productContainer.innerHTML = storedProductData.slice(0, 4).map(product => {
     const isInWishlist = wishlist.some(item => item.productName === product.productName);
 
-    return `<div class="productSlides" data-aos="flip-left">
-              <div class="productItem">
+    return `<div class="productSlides"  data-aos="flip-left">
+              <div class="productItem" data-product-name="${product.productName}">
                 <div class="item-card">
                   <div class="item-img">
                     <img src="${product.productImage}" class="product-img" alt="">
@@ -146,6 +153,39 @@ function renderProductsForYou() {
             </div>`;
   }).join('');
 }
+
+
+
+
+
+
+
+
+// ------------------Store from wishlist to cartlist -------------
+
+let cartlist = JSON.parse(localStorage.getItem("cartlist")) ||[];
+
+let storedProductData = JSON.parse(localStorage.getItem("productData"))|| [];
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("add-to-cart")) {
+    console.log(e.target.closest(".productItem"));
+
+    const productElement = e.target.closest(".productItem");
+    const productName = productElement.getAttribute("data-product-name");
+
+    let selectedProduct = storedProductData.find(item => item.productName === productName);
+
+                          console.log(selectedProduct)
+    if (selectedProduct) {
+      const index = cartlist.findIndex(item => item.productName === productName);
+      if (index === -1) {
+        cartlist.push(selectedProduct);
+        localStorage.setItem("cartlist", JSON.stringify(cartlist));
+      }
+    }
+  }
+});
 
 
 
