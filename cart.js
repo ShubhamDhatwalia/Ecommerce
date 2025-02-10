@@ -60,7 +60,7 @@ cartContainer.innerHTML = "";
 
 
 if (cartlist.length == 0) {
-  console.log("cart is empty");
+  document.querySelector("table").style.display =" none";
 
 }
 
@@ -130,8 +130,9 @@ cartlist.forEach((product) => {
 
       cartRow.remove();
 
-      updateTotal();
-      return;
+      if (cartlist.length == 0) {
+        document.querySelector("table").style.display =" none";
+      }
 
     }
 
