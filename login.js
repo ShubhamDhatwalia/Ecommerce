@@ -44,10 +44,10 @@ form.addEventListener("submit", (event) => {
 function clearValidation(){
 
     mailPhoneError.style.visibility = 'hidden'
-    userEmailPhone.style.outline = 'none';
+    userEmailPhone.style.borderBottom = '0.5px rgb(0, 0, 0, 0.3) solid';
 
     passwordError.style.visibility = 'hidden'
-    userPassword.style.outline = 'none';
+    userPassword.style.borderBottom = '0.5px rgb(0, 0, 0, 0.3) solid';
 }
 
 

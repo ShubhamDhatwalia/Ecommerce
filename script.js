@@ -51,9 +51,13 @@ for (i = 0; i < dropdown.length; i++) {
 
 
 
+
+
 // Store product data in localStorage
 localStorage.setItem("productData", JSON.stringify(productData));
 const storedProductData = JSON.parse(localStorage.getItem("productData"));
+
+
 
 storedProductData.forEach((product) => {
   const cardHtml = `
@@ -72,7 +76,7 @@ storedProductData.forEach((product) => {
         <div class="item-details">
           <h4 class="product-name">${product.productName}</h4>
           <div class="price">
-            <h4>$${product.price} <span class="discounted-price">$${product.originalPrice}</span></h4>
+            <h4>₹${product.price} <span class="discounted-price">₹${product.originalPrice}</span></h4>
           </div>
           <div class="ratting">
             <img src="./assests/ratting-star.svg" alt="">
@@ -119,7 +123,6 @@ function toggleWishList(product) {
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("fill-heart")) {
     const productName = e.target.getAttribute("data-product-name");
-    console.log(productName);
     let selectedProduct = storedProductData.find(item => item.productName === productName);
 
     if (selectedProduct) {
@@ -137,6 +140,37 @@ wishlist.forEach(product => {
     heartIcon.style.color = "#e60505";
   });
 });
+
+
+
+
+// ------------------Store to cartlist -------------
+
+let cartlist = JSON.parse(localStorage.getItem("cartlist")) ||[];
+
+document.addEventListener("click", (e) =>{
+  if(e.target.classList.contains("add-to-cart")){
+    const productName = e.target.parentElement.children[1].getAttribute("data-product-name");
+    
+    let selectedProduct = storedProductData.find((item) => {
+
+      item.productName === productName
+    });
+    
+    
+
+    const index = cartlist.findIndex((item) => {
+      item.productName === productName
+    });
+
+    if(index === -1){
+      cartlist.push(selectedProduct);
+    }
+  }
+
+  localStorage.setItem("cartlist", JSON.stringify(cartlist));
+})
+
 
 
 const swiperConfig = {

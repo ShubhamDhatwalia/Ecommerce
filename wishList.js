@@ -10,6 +10,15 @@ let wishlist = JSON.parse(localStorage.getItem("wishlistData")) || [];
 // Update wishlist count on load
 document.querySelector(".wishList-count").textContent = wishlist.length;
 
+
+if (wishlist.length === 0) {
+  document.querySelector(".wishList-items").innerHTML = `<div class="empty-wishlist">
+              <img src="./assests/no_wish_list.png" alt="">
+              <button class="btn" onclick="window.location.href='home.html'">Back to Homepage</button>
+          </div>`;
+}
+
+
 // Function to update only the wishlist icon
 function updateWishlistIcon(productName, isInWishlist) {
   document.querySelectorAll(`[data-product-name="${productName}"]`).forEach((heartIcon) => {
@@ -44,7 +53,7 @@ function addToWishlistUI(product) {
                           <div class="item-details">
                               <h4 class="product-name">${product.productName}</h4>
                               <div class="price">
-                                  <h4>$${product.price} <span class="discounted-price">$${product.originalPrice}</span></h4>
+                                  <h4>₹${product.price} <span class="discounted-price">₹${product.originalPrice}</span></h4>
                               </div>
                           </div>
                       </div>
@@ -55,12 +64,15 @@ function addToWishlistUI(product) {
 }
 
 
+
 // Function to remove a specific wishlist item dynamically (no full re-render)
 function removeFromWishlistUI(productName) {
   const productElement = document.querySelector(`.productItem[data-product-name="${productName}"]`);
   if (productElement) {
     productElement.remove();
   }
+
+
 
   // If the wishlist is empty, show the empty message
   if (wishlist.length === 0) {
@@ -72,6 +84,8 @@ function removeFromWishlistUI(productName) {
 
   document.querySelector(".wishList-count").textContent = wishlist.length;
 }
+
+
 
 
 // Function to toggle wishlist status
@@ -94,6 +108,8 @@ function toggleWishList(productName) {
   localStorage.setItem("wishlistData", JSON.stringify(wishlist));
   updateWishlistIcon(productName, isInWishlist);
 }
+
+
 
 // Function to render "Products for You" (runs only once)
 function renderProductsForYou() {
@@ -118,7 +134,7 @@ function renderProductsForYou() {
                   <div class="item-details">
                     <h4 class="product-name">${product.productName}</h4>
                     <div class="price">
-                      <h4>$${product.price} <span class="discounted-price">$${product.originalPrice}</span></h4>
+                      <h4>₹${product.price} <span class="discounted-price">₹${product.originalPrice}</span></h4>
                     </div>
                     <div class="ratting">
                       <img src="./assests/ratting-star.svg" alt="">

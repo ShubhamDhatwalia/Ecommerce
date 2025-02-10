@@ -371,7 +371,7 @@ header {
 
     list-style: none;
     padding: 10px 0;
-    
+
 }
 
 .side-nav-carousel .menu .dropdown-btn {
@@ -767,7 +767,8 @@ header {
 }
 
 .item-card .fill-heart,
-.fill-eye , .fill-delete{
+.fill-eye,
+.fill-delete {
     width: 34px;
     height: 34px;
     position: absolute;
@@ -782,7 +783,8 @@ header {
 }
 
 .fill-eye:hover,
-.fill-heart:hover, .fill-delete:hover {
+.fill-heart:hover,
+.fill-delete:hover {
     cursor: pointer;
     transform: scale(1.2);
 }
@@ -1097,6 +1099,7 @@ footer p {
     line-height: 24px;
 
 }
+
 .footer-content {
     display: flex;
     justify-content: center;
@@ -1723,7 +1726,8 @@ textarea {
     transform: none;
 }
 
-.wishList-btns {
+.wishList-btns,
+.cart-btns {
     padding: 16px 48px;
     border-radius: 4px;
     border: 1px solid rgba(0, 0, 0, 0.50);
@@ -1749,13 +1753,15 @@ textarea {
     gap: 30px;
     flex-wrap: wrap;
 }
-.empty-wishlist{
+
+.empty-wishlist {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
 }
-.empty-wishlist img{
+
+.empty-wishlist img {
     width: 100%;
     height: auto;
 }
@@ -1765,18 +1771,18 @@ textarea {
     margin-top: 80px;
 }
 
-.just-for-you .heading{
+.just-for-you .heading {
     justify-content: space-between;
 }
 
-.just-for-you .main-heading{
+.just-for-you .main-heading {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
 }
 
-.products-for-you{
+.products-for-you {
     margin-top: 60px;
     display: flex;
     flex-wrap: wrap;
@@ -1785,13 +1791,193 @@ textarea {
 }
 
 
+.cart {
+    margin-top: 80px;
+}
+
+.cart-items {
+    margin-top: 40px;
+}
+
+.cart-items table {
+    width: 100%;
+    border-spacing: 0 40px;
+
+}
+
+
+.cart-items tr {
+    border-collapse: collapse;
+    background: #FFF;
+}
+
+
+.cart-items table thead {
+    border-radius: 4px;
+    box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.05);
+}
+
+.cart-items table th {
+
+    padding: 24px 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    width: 25%;
+}
+
+.cart-items .product {
+    text-align: left;
+    padding-left: 40px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.cart-items .product-subtotal {
+    text-align: right;
+    padding-right: 40px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+tbody tr td {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+}
+
+.cart-items tbody img {
+    width: 54px;
+    height: 54px;
+}
+
+.cart-items tbody .product-col {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+tbody tr {
+
+    height: 102px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.05);
+   
+
+}
+
+tbody .product {
+    height: 102px;
+}
+
+tbody .product-name {
+    white-space: nowrap;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+td input {
+    width: 46px;
+    height: 30px;
+    padding: 6px 12px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    border-radius: 4px;
+    border: 1.5px solid rgba(0, 0, 0, 0.40);
+}
+
+
+.cart-btns-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -16px;
+}
+
+.coupon-cartTotal {
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.coupon {
+    white-space: nowrap;
+    flex: 0;
+}
+
+.coupon input {
+    border-radius: 4px;
+    border: 1px solid #000;
+    padding: 16px 24px;
+    opacity: 0.5;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-right: 16px;
+}
+
+.cart-total {
+    padding: 32px 24px;
+    flex: 1;
+    border-radius: 4px;
+    border: 1.5px solid #000;
+}
+
+.cart-total h5 {
+    font-weight: 500;
+    margin-bottom: 8px;
+
+}
+
+
+.cart-total  h4 {
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 0.5px rgb(0, 0, 0, 0.4) solid;
+}
+.total-row{
+    border-bottom: none !important;
+}
+
+.cart-total .checkout-btn{
+    text-align: center;
+}
+
+
+
 @media screen and (max-width: 425px) {
 
-
-    .btn{
-        padding: 10px;
+    .coupon{
+        white-space: wrap;
     }
-
+    .coupon input{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .coupon button{
+        float: right;
+        margin-top: 10px;
+    }
 
     .featured-thumbs .thumb-2 .thumb-description {
         bottom: 32px !important;
@@ -1807,7 +1993,8 @@ textarea {
         align-items: center;
         text-align: center;
     }
-    h6{
+
+    h6 {
         font-size: 25px !important;
     }
 
@@ -1822,12 +2009,52 @@ textarea {
 
 @media screen and (max-width:690px) {
 
-    h6{
-        font-size: 30px ;
+    td tbody, .product-name {
+        font-size: 14px !important;
     }
+
+    .coupon input{
+        padding: 10px;
+    }
+    td input{
+        width: 20px;
+    }
+
+    .btn {
+        padding: 12px;
+    }
+   
+    tbody .product-subtotal {
+        padding-right: 20px !important;
+    }
+
+    .cart-items .product-subtotal{
+        padding-right: 20px;
+    }
+
+    .cart-items .product{
+        padding-left: 20px;
+        text-align: center;
+        
+    }
+    .cart-items tbody .product img{
+        align-self: center;
+    }
+
+    .cart-items tbody .product{
+        flex-wrap: wrap;
+        gap: 0px;
+    }
+
+   
+    h6 {
+        font-size: 30px;
+    }
+
     .best-selling-carousel {
         margin-bottom: 50px;
     }
+
     .contact-component {
         flex-wrap: wrap;
         justify-content: center;
@@ -1937,21 +2164,33 @@ textarea {
 
 @media screen and (max-width: 930px) {
 
-    footer{
+    .coupon{
+        flex: 100%;
+    }
+    footer {
         margin-top: 60px;
     }
 
     .offers-carousel {
         margin-top: 0;
     }
-    
-    .hero-section, .featured-section, .flash-sales, .categories-section, .this-month, .products-section, .featured-services, .contact-component, .contact{
+
+    .hero-section,
+    .featured-section,
+    .flash-sales,
+    .categories-section,
+    .this-month,
+    .products-section,
+    .featured-services,
+    .contact-component,
+    .contact {
         margin-top: 60px;
     }
 
-    .promo-header{
+    .promo-header {
         margin-top: 0 !important;
     }
+
     .main-header {
         margin-top: 16px !important;
     }

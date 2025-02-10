@@ -40,13 +40,13 @@ form.addEventListener("submit", (event) => {
 
 function clearValidation(){
   nameError.style.visibility = 'hidden'
-    userName.style.outline = 'none';
+    userName.style.borderBottom = '0.5px rgb(0, 0, 0, 0.3) solid';
 
     mailPhoneError.style.visibility = 'hidden'
-    userEmailPhone.style.outline = 'none';
+    userEmailPhone.style.borderBottom = '0.5px rgb(0, 0, 0, 0.3) solid';
 
     passwordError.style.visibility = 'hidden'
-    userPassword.style.outline = 'none';
+    userPassword.style.borderBottom = '0.5px rgb(0, 0, 0, 0.3) solid';
 }
 
 function validateName() {
