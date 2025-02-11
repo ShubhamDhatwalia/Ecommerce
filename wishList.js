@@ -12,7 +12,7 @@ document.querySelector(".wishList-count").textContent = wishlist.length;
 
 
 if (wishlist.length === 0) {
-  document.querySelector(".wishList-items").innerHTML = `<div class="empty-wishlist">
+  document.querySelector(".wishList-items").innerHTML = `<div class="empty-wishlist"  data-aos="zoom-in" data-aos-duration="1000">
               <img src="./assests/no_wish_list.png" alt="">
               <button class="btn" onclick="window.location.href='home.html'">Back to Homepage</button>
           </div>`;
@@ -83,8 +83,8 @@ function removeFromWishlistUI(productName) {
 
   // If the wishlist is empty, show the empty message
   if (wishlist.length === 0) {
-    document.querySelector(".wishList-items").innerHTML = `<div class="empty-wishlist">
-                <img src="./assests/no_wish_list.png" alt="">
+    document.querySelector(".wishList-items").innerHTML = `<div class="empty-wishlist" data-aos="zoom-in" data-aos-duration="1000">
+                <img src="./assests/no_wish_list.png" alt="" >
                 <button class="btn" onclick="window.location.href='home.html'">Back to Homepage</button>
             </div>`;
   }
@@ -162,29 +162,124 @@ function renderProductsForYou() {
 
 
 // ------------------Store from wishlist to cartlist -------------
-
-let cartlist = JSON.parse(localStorage.getItem("cartlist")) ||[];
-
-let storedProductData = JSON.parse(localStorage.getItem("productData"))|| [];
+let cartlist = JSON.parse(localStorage.getItem("cartlist")) || [];
+let storedProductData = JSON.parse(localStorage.getItem("productData")) || [];
 
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("add-to-cart")) {
-    console.log(e.target.closest(".productItem"));
-
     const productElement = e.target.closest(".productItem");
     const productName = productElement.getAttribute("data-product-name");
 
     let selectedProduct = storedProductData.find(item => item.productName === productName);
 
-                          console.log(selectedProduct)
     if (selectedProduct) {
       const index = cartlist.findIndex(item => item.productName === productName);
+
       if (index === -1) {
-        cartlist.push(selectedProduct);
+        // Product not in cart, add it
+        cartlist.push({...selectedProduct, cartQuantity: 1 });
         localStorage.setItem("cartlist", JSON.stringify(cartlist));
+
+        Toastify({
+          text: "Added to cart !",
+          duration: 1500,
+          gravity: "top",
+          position: "right",
+          stopOnFocus: true,
+          offset: { y: "100px" },
+          style: {
+            background: "linear-gradient(to right,rgb(111, 145, 103), rgb(49, 194, 30))",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            fontWeight: "500",
+            borderRadius: "5px",
+          },
+        }).showToast();
+      } else {
+        // Product is already in the cart
+        Toastify({
+          text: "Already in cart !",
+          duration: 1500,
+          gravity: "top",
+          position: "right",
+          stopOnFocus: true,
+          offset: { y: "100px" },
+          style: {
+            background: "linear-gradient(to right, #DB4444, rgb(218, 130, 103))",
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: "16px",
+            fontWeight: "500",
+            borderRadius: "5px",
+          },
+        }).showToast();
       }
     }
   }
+});
+
+
+
+
+let moveToBag = document.querySelector(".move-to-bag");
+
+moveToBag.addEventListener("click", () => {
+  let wishlist = JSON.parse(localStorage.getItem("wishlistData")) || [];
+  let cartlist = JSON.parse(localStorage.getItem("cartlist")) || [];
+
+  let addedCount = 0;
+  let alreadyInCartCount = 0;
+
+  wishlist.forEach((item) => {
+    // Check if item is already in the cart
+    if (!cartlist.some(cartItem => cartItem.productName === item.productName)) {
+      cartlist.push({ ...item, cartQuantity: 1 });
+      addedCount++; 
+    } else {
+      alreadyInCartCount++; 
+    }
+  });
+
+  // Update cartlist in localStorage
+  localStorage.setItem("cartlist", JSON.stringify(cartlist));
+
+  // Show toast notification based on added items
+  if (addedCount > 0) {
+    Toastify({
+      text: `${addedCount} items added to cart !`,
+      duration: 1000,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      offset: { y: "120px" },
+      style: {
+        background: "linear-gradient(to right,rgb(111, 145, 103), rgb(49, 194, 30))",
+        fontFamily: "'Poppins', sans-serif",
+        fontSize: "16px",
+        fontWeight: "500",
+        borderRadius: "5px",
+      },
+    }).showToast();
+  }
+
+  if (alreadyInCartCount > 0) {
+    Toastify({
+      text: `${alreadyInCartCount} items already in cart !`,
+      duration: 2000,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      offset: { y: "120px" },
+      style: {
+        background: "linear-gradient(to right, #DB4444, rgb(218, 130, 103))",
+        fontFamily: "'Poppins', sans-serif",
+        fontSize: "16px",
+        fontWeight: "500",
+        borderRadius: "5px",
+      },
+    }).showToast();
+  }
+
+ 
 });
 
 

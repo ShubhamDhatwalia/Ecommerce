@@ -17,6 +17,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 </head>
 
@@ -118,13 +119,13 @@
     <section class="wishList">
 
         <div class="container">
-            <div class="inner-heading">
-                <div class="inner-heading-name">
-                    <h3>Wishlist (<span class="wishList-count">4</span>)</h3>
+            <div class="inner-heading"  >
+                <div class="inner-heading-name" >
+                    <h3 data-aos="fade-right" data-aos-duration="1000">Wishlist (<span class="wishList-count">4</span>)</h3>
                 </div>
 
                 <div>
-                    <button class="wishList-btns btn">Move All To Bag</button>
+                    <button class="wishList-btns btn move-to-bag" data-aos="fade-left" data-aos-duration="1000">Move All To Bag</button>
                 </div>
             </div>
 
@@ -142,13 +143,13 @@
 
         <div class="container">
             <div class="heading">
-                <div class="main-heading">
+                <div class="main-heading" data-aos="fade-right" data-aos-duration="1000">
                     <img src="./assests/headings-icon.svg" alt="">
                     <h2>Just For You</h2>
                 </div>
 
                 <div>
-                    <button class="btn wishList-btns">See All</button>
+                    <button class="btn wishList-btns" data-aos="fade-left" data-aos-duration="1000">See All</button>
                 </div>
             </div>
 
@@ -237,6 +238,7 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="wishList.js"></script>
 </body>
 

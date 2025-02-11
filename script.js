@@ -92,6 +92,8 @@ storedProductData.forEach((product) => {
   document.querySelector(".productSwiper").innerHTML += cardHtml;
 });
 
+
+
 // Toggle wishlist function
 function toggleWishList(product) {
   let wishlist = JSON.parse(localStorage.getItem("wishlistData")) || [];
@@ -146,7 +148,7 @@ wishlist.forEach(product => {
 
 // ------------------Store to cartlist -------------
 
-let cartlist = JSON.parse(localStorage.getItem("cartlist")) ||[];
+let cartlist = JSON.parse(localStorage.getItem("cartlist")) || [];
 
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("add-to-cart")) {
@@ -154,16 +156,53 @@ document.addEventListener("click", (e) => {
 
 
     let selectedProduct = storedProductData.find(item => item.productName === productName);
-    
+
     const index = cartlist.findIndex(item => item.productName === productName);
-    
+
 
     if (index === -1) {
-      cartlist.push(selectedProduct);
-      localStorage.setItem("cartlist", JSON.stringify(cartlist)); // Save updated cartlist
+      cartlist.push({ ...selectedProduct,  cartQuantity: 1 });
+      localStorage.setItem("cartlist", JSON.stringify(cartlist));
+      
+
+      Toastify({
+        text: "Added to cart !",
+        duration: 1500,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        offset: { y: "100px" },
+        style: {
+          background: "linear-gradient(to right,rgb(111, 145, 103), rgb(49, 194, 30))",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+          fontWeight: "500",
+          borderRadius: "5px",
+        },
+      }).showToast();
+    }
+    else {
+
+      Toastify({
+        text: "Already in cart !",
+        duration: 1500,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        offset: { y: "100px" },
+        style: {
+          background: "linear-gradient(to right, #DB4444, rgb(218, 130, 103))",
+          fontFamily: "'Poppins', sans-serif",
+          fontSize: "16px",
+          fontWeight: "500",
+          borderRadius: "5px",
+        },
+      }).showToast();
     }
   }
 });
+
+
 
 
 
@@ -313,5 +352,4 @@ var x = setInterval(function () {
 
   }
 }, 1000);
-
 

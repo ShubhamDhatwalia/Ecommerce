@@ -46,10 +46,9 @@ breadcrumbContainer.innerHTML = breadcrumbHtml;
 
 
 //  Cart List Rendering 
+//  ------------------ Cart List Rendering ------------------
 
 let cartlist = JSON.parse(localStorage.getItem("cartlist")) || [];
-
-
 
 let delivery = document.querySelector(".delivery");
 let cartSubtotal = document.querySelector(".cart-subtotal");
@@ -57,90 +56,83 @@ let cartTotal = document.querySelector(".total");
 let cartContainer = document.querySelector(".cart-items-container");
 cartContainer.innerHTML = "";
 
-
-
-if (cartlist.length == 0) {
-  document.querySelector("table").style.display =" none";
-
+// Show empty cart message if no items exist
+if (cartlist.length === 0) {
+  document.querySelector("table").style.display = "none";
+  document.querySelector(".cart-items").innerHTML = `
+    <img class="empty-cart-image" src="./assests/empty-cart.png" alt="" data-aos="zoom-in" data-aos-duration="1000">
+  `;
 }
 
-
+// Function to update total price and delivery charge
 function updateTotal() {
   let total = 0;
-
   document.querySelectorAll(".product-subtotal").forEach((element) => {
-
     let subtotal = parseFloat(element.innerText.replace("₹", "")) || 0;
     total += subtotal;
+  });
 
-  
-  })
+  let deliveryCharge = total < 499 && total !== 0 ? 40 : 0;
+  delivery.textContent = deliveryCharge === 0 ? "Free" : `₹${deliveryCharge}`;
 
-  
-  let deliveryCharge = total<499 && total !== 0 ? 40: 0;
-  delivery.textContent = deliveryCharge === 0 ? "Free" : deliveryCharge;
-
-  let finalTotal = total+deliveryCharge;
- 
+  let finalTotal = total + deliveryCharge;
 
   cartSubtotal.textContent = `₹${total.toFixed(2)}`;
   cartTotal.textContent = `₹${finalTotal.toFixed(2)}`;
 }
 
-
-
-
-
-cartlist.forEach((product) => {
-
+// Render each product in the cart
+cartlist.forEach((product, index) => {
   const cartRow = document.createElement("tr");
+
   cartRow.setAttribute("data-price", product.price);
 
   cartRow.innerHTML = ` 
-                            <td class="product"><img src="${product.productImage}" alt=""> <span class="product-name">${product.productName}</span></td>
-                            <td class="price"> ₹${product.price}</td>
-                            <td class="quantity"><input type="number" class = "input-quantity" min="0" value="1"></td>
-                            <td class="product-subtotal">₹${product.price.toFixed(2)}</td>
-                        `;
-
+    <td class="product">
+      <img src="${product.productImage}" alt=""> 
+      <span class="product-name">${product.productName}</span>
+    </td>
+    <td class="price"> ₹${product.price}</td>
+    <td class="quantity">
+      <input type="number" class="input-quantity" min="0" value="${product.cartQuantity}" onkeydown="return false;">
+    </td>
+    <td class="product-subtotal">₹${(product.cartQuantity * product.price).toFixed(2)}</td>
+  `;
 
   cartContainer.appendChild(cartRow);
 
-
-
-  //  quantity and subtotal calculation
-
+  // Get elements inside row
   let inputQuantity = cartRow.querySelector(".input-quantity");
-  let productSubttotal = cartRow.querySelector(".product-subtotal");
+  let productSubtotal = cartRow.querySelector(".product-subtotal");
 
-
+  // Quantity change event
   inputQuantity.addEventListener("input", () => {
-
     let quantity = parseInt(inputQuantity.value);
 
-    if(quantity ===0 ){
-      console.log("remove product");
-
-
-
-       cartlist = cartlist.filter(item => item.productName !== product.productName);
-
-
+    if (quantity === 0) {
+      // Remove product from cartlist if quantity is 0
+      cartlist.splice(index, 1);
       localStorage.setItem("cartlist", JSON.stringify(cartlist));
-
       cartRow.remove();
 
-      if (cartlist.length == 0) {
-        document.querySelector("table").style.display =" none";
+      if (cartlist.length === 0) {
+        document.querySelector("table").style.display = "none";
+        document.querySelector(".cart-items").innerHTML = `
+          <img class="empty-cart-image" src="./assests/empty-cart.png" alt="" data-aos="zoom-in" data-aos-duration="1000">
+        `;
       }
-
+    } else {
+      // Update cartlist quantity
+      cartlist[index].cartQuantity = quantity;
+      localStorage.setItem("cartlist", JSON.stringify(cartlist));
     }
 
-    productSubttotal.textContent = `₹${(quantity * product.price).toFixed(2)}`;
+    // Update subtotal
+    productSubtotal.textContent = `₹${(quantity * product.price).toFixed(2)}`;
 
-
+    // Update total price
     updateTotal();
-  })
-})
+  });
+});
 
 updateTotal();

@@ -7,7 +7,8 @@ export const productData = [
       price: 120,
       originalPrice: 160,
       rating: 4.5,
-      ratingCount: 88
+      ratingCount: 88,
+      stock: 10,
     },
     {
       productName: "AK-900 Wired Keyboard",
@@ -17,7 +18,8 @@ export const productData = [
       price: 960,
       originalPrice: 1160,
       rating: 4.7,
-      ratingCount: 200
+      ratingCount: 200,
+      stock: 10,
     },
     {
       productName: "IPS LCD Gaming Monitor",
@@ -27,7 +29,8 @@ export const productData = [
       price: 370,
       originalPrice: 700,
       rating: 4.6,
-      ratingCount: 150
+      ratingCount: 150,
+      stock: 10,
     },
     {
       productName: "S-Series Comfort Chair ",
@@ -37,7 +40,8 @@ export const productData = [
       price: 375,
       originalPrice: 400,
       rating: 4.8,
-      ratingCount: 120
+      ratingCount: 120,
+      stock: 10,
     },
     {
       productName: "HAVIT HV-G92 Gamepad",
@@ -47,7 +51,8 @@ export const productData = [
       price: 120,
       originalPrice: 160,
       rating: 4.5,
-      ratingCount: 88
+      ratingCount: 88,
+      stock: 10,
     },
     {
       productName: "AK-900 Wired Keyboard",
@@ -57,7 +62,8 @@ export const productData = [
       price: 960,
       originalPrice: 1160,
       rating: 4.7,
-      ratingCount: 200
+      ratingCount: 200,
+      stock: 10,
     },
     {
       productName: "IPS LCD Gaming Monitor",
@@ -67,7 +73,8 @@ export const productData = [
       price: 370,
       originalPrice: 700,
       rating: 4.6,
-      ratingCount: 150
+      ratingCount: 150,
+      stock: 10,
     },
     {
       productName: "S-Series Comfort Chair ",
@@ -77,7 +84,8 @@ export const productData = [
       price: 375,
       originalPrice: 400,
       rating: 4.8,
-      ratingCount: 120
+      ratingCount: 120,
+      stock: 10,
     },
     {
       productName: "HAVIT HV-G92 Gamepad",
@@ -87,7 +95,8 @@ export const productData = [
       price: 120,
       originalPrice: 160,
       rating: 4.5,
-      ratingCount: 88
+      ratingCount: 88,
+      stock: 10,
     },
     {
       productName: "AK-900 Wired Keyboard",
@@ -97,7 +106,8 @@ export const productData = [
       price: 960,
       originalPrice: 1160,
       rating: 4.7,
-      ratingCount: 200
+      ratingCount: 200,
+      stock: 10,
     },
     {
       productName: "IPS LCD Gaming Monitor",
@@ -107,7 +117,8 @@ export const productData = [
       price: 370,
       originalPrice: 700,
       rating: 4.6,
-      ratingCount: 150
+      ratingCount: 150,
+      stock: 10,
     },
     {
       productName: "S-Series Comfort Chair ",
@@ -117,7 +128,8 @@ export const productData = [
       price: 375,
       originalPrice: 400,
       rating: 4.8,
-      ratingCount: 120
+      ratingCount: 120,
+      stock: 10,
     }
   ];
   
