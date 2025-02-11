@@ -5,10 +5,37 @@ AOS.init({
 
 
 
+const body = document.body;
+document.querySelector(".menu-btn").addEventListener("click", () => {
+  document.querySelector(".overlay").style.height = "100vh";
+  body.classList.add("no-scroll");
+
+})
+
+
+document.querySelector(".closebtn").addEventListener("click", () => {
+  document.querySelector(".overlay").style.height = "0";
+  body.classList.remove("no-scroll");
+})
 
 
 
+document.querySelectorAll(".btn").forEach(button => {
+  button.addEventListener("click", function (e) {
+      let ripple = document.createElement("span");
+      ripple.classList.add("ripple");
 
+      let rect = this.getBoundingClientRect();
+      ripple.style.left = `${e.clientX - rect.left}px`;
+      ripple.style.top = `${e.clientY - rect.top}px`;
+
+      this.appendChild(ripple);
+
+      setTimeout(() => {
+          ripple.remove();
+      }, 600);
+  });
+});
 
 
 
@@ -107,19 +134,6 @@ function showValid(input, errorElement, message) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.querySelector(".user-menu .wishlist-link  ").style.display = "none";
 document.querySelector(".user-menu .cart-link  ").style.display = "none";
 
@@ -127,15 +141,3 @@ document.querySelector(".user-menu .cart-link  ").style.display = "none";
 
 
 
-
-document.querySelector(".menu-btn").addEventListener("click", () => {
-    document.querySelector(".overlay").style.height = "100vh";
-    body.classList.add("no-scroll");
-    
-  })
-  
-  
-  document.querySelector(".closebtn").addEventListener("click", () => {
-    document.querySelector(".overlay").style.height = "0";
-    body.classList.remove("no-scroll");
-  })

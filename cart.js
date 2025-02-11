@@ -2,6 +2,8 @@ AOS.init({
   once: true,
 })
 
+
+const body = document.body;
 document.querySelector(".menu-btn").addEventListener("click", () => {
   document.querySelector(".overlay").style.height = "100vh";
   body.classList.add("no-scroll");
@@ -13,6 +15,30 @@ document.querySelector(".closebtn").addEventListener("click", () => {
   document.querySelector(".overlay").style.height = "0";
   body.classList.remove("no-scroll");
 })
+
+
+
+document.querySelectorAll(".btn").forEach(button => {
+  button.addEventListener("click", function (e) {
+      let ripple = document.createElement("span");
+      ripple.classList.add("ripple");
+
+      let rect = this.getBoundingClientRect();
+      ripple.style.left = `${e.clientX - rect.left}px`;
+      ripple.style.top = `${e.clientY - rect.top}px`;
+
+      this.appendChild(ripple);
+
+      setTimeout(() => {
+          ripple.remove();
+      }, 600);
+  });
+});
+
+
+
+
+
 
 
 
@@ -87,10 +113,12 @@ cartlist.forEach((product, index) => {
 
   cartRow.setAttribute("data-price", product.price);
 
+  let productNameShort = product.productName.split(" ").slice(0, 2).join(" ");
+
   cartRow.innerHTML = ` 
     <td class="product">
       <img src="${product.productImage}" alt=""> 
-      <span class="product-name">${product.productName}</span>
+      <span class="product-name">${productNameShort}</span>
     </td>
     <td class="price"> ₹${product.price}</td>
     <td class="quantity">
@@ -101,20 +129,31 @@ cartlist.forEach((product, index) => {
 
   cartContainer.appendChild(cartRow);
 
-  // Get elements inside row
+  
   let inputQuantity = cartRow.querySelector(".input-quantity");
   let productSubtotal = cartRow.querySelector(".product-subtotal");
 
-  // Quantity change event
+  
   inputQuantity.addEventListener("input", () => {
     let quantity = parseInt(inputQuantity.value);
-
+    
+    
+    let productIndex = cartlist.findIndex(item => item.productName === product.productName);
+    if (productIndex !== -1) {
+      cartlist[productIndex].cartQuantity = quantity;
+    }
+  
     if (quantity === 0) {
-      // Remove product from cartlist if quantity is 0
-      cartlist.splice(index, 1);
-      localStorage.setItem("cartlist", JSON.stringify(cartlist));
+     
       cartRow.remove();
-
+      
+     
+      cartlist = cartlist.filter(item => item.cartQuantity > 0);
+      
+     
+      localStorage.setItem("cartlist", JSON.stringify(cartlist));
+  
+    
       if (cartlist.length === 0) {
         document.querySelector("table").style.display = "none";
         document.querySelector(".cart-items").innerHTML = `
@@ -122,17 +161,16 @@ cartlist.forEach((product, index) => {
         `;
       }
     } else {
-      // Update cartlist quantity
-      cartlist[index].cartQuantity = quantity;
       localStorage.setItem("cartlist", JSON.stringify(cartlist));
     }
-
-    // Update subtotal
+  
+   
     productSubtotal.textContent = `₹${(quantity * product.price).toFixed(2)}`;
-
-    // Update total price
+  
+   
     updateTotal();
   });
-});
+  
+})
 
 updateTotal();
