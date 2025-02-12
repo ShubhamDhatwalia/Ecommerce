@@ -11,18 +11,18 @@ AOS.init({
 
 document.querySelectorAll(".btn").forEach(button => {
   button.addEventListener("click", function (e) {
-      let ripple = document.createElement("span");
-      ripple.classList.add("ripple");
+    let ripple = document.createElement("span");
+    ripple.classList.add("ripple");
 
-      let rect = this.getBoundingClientRect();
-      ripple.style.left = `${e.clientX - rect.left}px`;
-      ripple.style.top = `${e.clientY - rect.top}px`;
+    let rect = this.getBoundingClientRect();
+    ripple.style.left = `${e.clientX - rect.left}px`;
+    ripple.style.top = `${e.clientY - rect.top}px`;
 
-      this.appendChild(ripple);
+    this.appendChild(ripple);
 
-      setTimeout(() => {
-          ripple.remove();
-      }, 600);
+    setTimeout(() => {
+      ripple.remove();
+    }, 600);
   });
 });
 
@@ -186,9 +186,9 @@ document.addEventListener("click", (e) => {
 
 
     if (index === -1) {
-      cartlist.push({ ...selectedProduct,  cartQuantity: 1 });
+      cartlist.push({ ...selectedProduct, cartQuantity: 1 });
       localStorage.setItem("cartlist", JSON.stringify(cartlist));
-      
+
 
       Toastify({
         text: "Added to cart !",
@@ -298,13 +298,14 @@ var categoryCarousel = new Swiper(".categories-carousel", {
 var sideNavCarousel = new Swiper(".nav-carousel", {
   slidesPerView: 'auto',
   spaceBetween: 40,
-  freeMode: true,
-  speed: 8000,
-  allowTouchMove: true,
+  loop: true,
+  speed: 5000,
+
 
   autoplay: {
-    delay: 0,
-    pauseOnMouseEnter: true,
+    delay: 10,
+    reverseDirection: false,
+    disableOnInteraction: true,
   }
 })
 
@@ -313,7 +314,7 @@ var offersCarousel = new Swiper(".offers-carousel", {
 
   autoplay: {
     delay: 2500,
-    disableOnInteraction: false,
+    disableOnInteraction: true,
   },
   pagination: {
     el: ".swiper-pagination",

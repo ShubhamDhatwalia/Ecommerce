@@ -1460,12 +1460,16 @@ form .user-details .name-group,
 
 form .user-details span,
 .register-form form span,
-.signin-form form span {
+.signin-form form span,  .coupon #coupon-error{
     position: absolute;
     left: 0;
     bottom: -20px;
     color: red;
     visibility: hidden;
+}
+
+.coupon #coupon-error{
+    top: 60px;
 }
 
 .contact {
@@ -1947,6 +1951,7 @@ td input:focus {
 .coupon {
     white-space: nowrap;
     flex: 0;
+    position: relative;
 }
 
 .coupon input {
@@ -1960,6 +1965,10 @@ td input:focus {
     font-weight: 400;
     line-height: 24px;
     margin-right: 16px;
+}
+
+.coupon input:focus{
+    outline: none;
 }
 
 .cart-total {

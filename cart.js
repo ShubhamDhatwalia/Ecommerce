@@ -71,7 +71,7 @@ breadcrumbContainer.innerHTML = breadcrumbHtml;
 
 
 
-//  Cart List Rendering 
+// Cart List Rendering 
 let cartlist = JSON.parse(localStorage.getItem("cartlist")) || [];
 
 let delivery = document.querySelector(".delivery");
@@ -86,6 +86,27 @@ let couponCode = document.querySelector(".coupon-code");
 let couponName = document.querySelector(".coupon-name");
 let couponDiscount = document.querySelector(".discount");
 let couponGroup = document.querySelector(".coupon-group");
+let couponError = document.querySelector("#coupon-error");
+
+let appliedDiscount = 0;
+let appliedCoupon = '';
+let emptyButton = document.querySelector(".empty-btn");
+
+
+
+
+emptyButton.addEventListener("click", ()=>{
+  
+  localStorage.removeItem("cartlist");
+  cartlist = JSON.parse(localStorage.getItem("cartlist")) || [];
+  if (cartlist.length === 0) {
+    document.querySelector("table").style.display = "none";
+    document.querySelector(".cart-items").innerHTML = `
+      <img class="empty-cart-image" src="./assests/empty-cart.png" alt="" data-aos="zoom-in" data-aos-duration="1000">
+    `;
+  }
+})
+
 
 
 
@@ -98,20 +119,57 @@ if (cartlist.length === 0) {
   `;
 }
 
-function validateCoupon() {
+
+function showError(message) {
+  couponError.textContent = message;
+  couponError.style.visibility = "visible";
+  couponCode.style.borderColor = 'red';
+}
+
+
+function hideError() {
+  couponCode.style.borderColor = '';
+  couponError.style.visibility = "hidden";
+}
+
+
+function validateCouponOnSubmit() {
   let code = couponCode.value.toLowerCase().trim();
   let discountPercentage = 0;
 
-  if (code === "welcome40") {
+  if (appliedCoupon) {
+    Toastify({
+      text: `Coupon already added!`,
+      duration: 2000,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "linear-gradient(to right, rgb(111, 145, 103), rgb(49, 194, 30))",
+        fontFamily: "'Poppins', sans-serif",
+        fontSize: "16px",
+        fontWeight: "500",
+        borderRadius: "5px",
+      },
+    }).showToast();
+    return null;
+  }
+  else if (code === "") {
+    showError("Please enter a coupon code!");
+    return null;
+  } else if (code === "welcome40") {
     discountPercentage = 40;
-  } else if (code === "save10") {
-    discountPercentage = 10;
+  } else {
+    showError("Invalid coupon code!");
+    return null;
   }
 
+  hideError();
   return discountPercentage;
 }
 
-function updateTotal() {
+
+function updateTotal(discountPercentage = appliedDiscount) {
   let total = 0;
 
   document.querySelectorAll(".product-subtotal").forEach((element) => {
@@ -119,7 +177,6 @@ function updateTotal() {
     total += subtotal;
   });
 
-  let discountPercentage = validateCoupon();
   let discount = (total > 199 && discountPercentage > 0) ? (total * discountPercentage) / 100 : 0;
 
   let deliveryCharge = total < 499 && total !== 0 ? 40 : 0;
@@ -131,30 +188,47 @@ function updateTotal() {
   cartTotal.textContent = `₹${finalTotal.toFixed(2)}`;
 
   if (discount > 0) {
-    couponName.textContent = couponCode.value.toUpperCase();
+    couponName.textContent = appliedCoupon;
     couponDiscount.innerText = `-₹${discount.toFixed(2)}`;
-    couponGroup.style.display = 'flex';
+    couponGroup.style.display = "flex";
   } else {
-    couponGroup.style.display = 'none';
+    couponGroup.style.display = "none";
   }
 }
 
+
 coupon.addEventListener("submit", (e) => {
   e.preventDefault();
-  updateTotal();
-  alert("Coupon applied! Discount updated.");
 
+  let discountPercentage = validateCouponOnSubmit();
+  if (discountPercentage !== null) {
+    appliedDiscount = discountPercentage;
+    appliedCoupon = couponCode.value;
+    updateTotal(appliedDiscount);
+    
+    Toastify({
+      text: `Coupon Added!`,
+      duration: 2000,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "linear-gradient(to right, rgb(111, 145, 103), rgb(49, 194, 30))",
+        fontFamily: "'Poppins', sans-serif",
+        fontSize: "16px",
+        fontWeight: "500",
+        borderRadius: "5px",
+      },
+    }).showToast();
+  }
   coupon.reset();
 });
 
 
-updateTotal();
 
 
 
-
-
-// Render each product in the cart
+// Render Cart Items
 cartlist.forEach((product, index) => {
   const cartRow = document.createElement("tr");
 
@@ -176,7 +250,6 @@ cartlist.forEach((product, index) => {
 
   cartContainer.appendChild(cartRow);
 
-
   let inputQuantity = cartRow.querySelector(".input-quantity");
   let productSubtotal = cartRow.querySelector(".product-subtotal");
 
@@ -184,22 +257,15 @@ cartlist.forEach((product, index) => {
   inputQuantity.addEventListener("input", () => {
     let quantity = parseInt(inputQuantity.value);
 
-
     let productIndex = cartlist.findIndex(item => item.productName === product.productName);
     if (productIndex !== -1) {
       cartlist[productIndex].cartQuantity = quantity;
     }
 
     if (quantity === 0) {
-
       cartRow.remove();
-
-
       cartlist = cartlist.filter(item => item.cartQuantity > 0);
-
-
       localStorage.setItem("cartlist", JSON.stringify(cartlist));
-
 
       if (cartlist.length === 0) {
         document.querySelector("table").style.display = "none";
@@ -211,13 +277,13 @@ cartlist.forEach((product, index) => {
       localStorage.setItem("cartlist", JSON.stringify(cartlist));
     }
 
-
     productSubtotal.textContent = `₹${(quantity * product.price).toFixed(2)}`;
 
 
-    updateTotal();
+    updateTotal(appliedDiscount);
   });
+});
 
-})
 
 updateTotal();
+
