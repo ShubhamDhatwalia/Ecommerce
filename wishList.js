@@ -5,9 +5,6 @@ AOS.init({
 
 
 
-
-
-
 document.querySelectorAll(".btn").forEach(button => {
   button.addEventListener("click", function (e) {
       let ripple = document.createElement("span");
