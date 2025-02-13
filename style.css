@@ -1263,7 +1263,9 @@ footer a,
     gap: 12px;
 }
 
-.about {
+.about,
+.product-detail,
+.billing {
     margin-top: 80px;
 
 }
@@ -1460,7 +1462,8 @@ form .user-details .name-group,
 
 form .user-details span,
 .register-form form span,
-.signin-form form span,  .coupon #coupon-error{
+.signin-form form span,
+.coupon #coupon-error {
     position: absolute;
     left: 0;
     bottom: -20px;
@@ -1468,7 +1471,7 @@ form .user-details span,
     visibility: hidden;
 }
 
-.coupon #coupon-error{
+.coupon #coupon-error {
     top: 60px;
 }
 
@@ -1829,7 +1832,7 @@ textarea {
 .cart-items table {
     width: 100%;
     border-spacing: 0;
-    
+
 }
 
 
@@ -1897,7 +1900,7 @@ tbody tr td {
 
 
 tbody tr {
-    
+
     border-radius: 4px;
     box-shadow: 0px 1px 13px 0px rgba(0, 0, 0, 0.05);
 
@@ -1967,7 +1970,7 @@ td input:focus {
     margin-right: 16px;
 }
 
-.coupon input:focus{
+.coupon input:focus {
     outline: none;
 }
 
@@ -2014,9 +2017,152 @@ td input:focus {
 }
 
 
+.main-body {
+
+    display: none;
+}
+
+
+.preloader {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    position: fixed;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top: 4px solid white;
+    border-left: 4px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: spin 1s linear infinite;
+    position: absolute;
+}
+
+
+
+.inner-spinner {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-bottom: 4px solid white;
+    border-right: 4px solid white;
+    animation: spinOpposite 1s linear infinite;
+}
+
+@keyframes spinOpposite {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+.billing h3 {
+    margin-top: 80px;
+}
+
+.billing-details {
+    margin-top: 48px;
+}
+
+.billing-details form {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.billing-details form .first-name-group,
+.billing-details form .last-name-group,
+.billing-details form .street-group,
+.billing-details form .apartment-group,
+.billing-details form .town-group,
+.billing-details form .phone-group,
+.billing-details form .email-group {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.billing-details form label {
+    color: #000;
+    opacity: 0.4;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+}
+
+.billing-details form span {
+    color: #DB4444;
+}
+
+.billing-details form input {
+    height: 50px;
+    border: none;
+    padding: 0 10px;
+    border-radius: 4px;
+    background: #F5F5F5;
+    margin-top: 8px;
+}
+
+form .checkbox {
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+}
+
+form .checkbox input{
+   margin-top: 0;
+}
+.checkbox label {
+    margin-left: 16px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.checkbox input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    accent-color: #DB4444;
+}
+
+
+
+
 @media screen and (max-width: 425px) {
 
-    .cart-items table .price{
+    .cart-items table .price {
         display: none;
     }
 
@@ -2064,7 +2210,7 @@ td input:focus {
 
 @media screen and (max-width:690px) {
 
-    .cart-items tbody .product .product-name{
+    .cart-items tbody .product .product-name {
         flex: 100%;
     }
 

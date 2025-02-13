@@ -6,6 +6,128 @@ AOS.init({
 });
 
 
+window.addEventListener("load", function () {
+  setTimeout(() => {
+      document.querySelector(".preloader").style.display = "none";
+      document.querySelector(".main-body").style.display = "block";
+
+
+  }, ); 
+});
+
+
+
+particlesJS('particles-js', {
+  "particles": {
+    "number": {
+      "value": 80,
+      "density": {
+        "enable": true,
+        "value_area": 2000
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "circle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 5
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.3,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 0.5,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 7,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 20,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 300,
+      "color": "#ffffff",
+      "opacity": 0,
+      "width": 2
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      // "onclick": {
+      //   "enable": true,
+      //   "mode": "push"
+      // },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 200,
+        "line_linked": {
+          "opacity": 0
+        }
+      },
+      "bubble": {
+        "distance": 800,
+        "size": 20,
+        "duration": 2,
+        "opacity": 0.8,
+        "speed": 40
+      },
+      "repulse": {
+        "distance": 100,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+})
+
 
 
 
@@ -300,14 +422,32 @@ var sideNavCarousel = new Swiper(".nav-carousel", {
   spaceBetween: 40,
   loop: true,
   speed: 5000,
-
-
+  allowTouchMove: false,
   autoplay: {
-    delay: 10,
-    reverseDirection: false,
-    disableOnInteraction: true,
+    delay: 0,
   }
 })
+
+
+function stopAutoplay(){
+  const swiperTranslate = sideNavCarousel.getTranslate();
+  sideNavCarousel.setTranslate(swiperTranslate);
+  sideNavCarousel.autoplay.stop();
+
+}
+function startAutoplay(){
+  sideNavCarousel.slideTo(sideNavCarousel.activeIndex, 3000, false);
+  sideNavCarousel.autoplay.start();
+
+}
+
+let navCarousel = document.querySelector(".side-nav-carousel")
+navCarousel.addEventListener("mouseenter", () => stopAutoplay());
+navCarousel.addEventListener("mouseleave", () => startAutoplay());
+
+
+
+
 
 var offersCarousel = new Swiper(".offers-carousel", {
   loop: true,

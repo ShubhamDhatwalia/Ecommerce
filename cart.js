@@ -70,7 +70,6 @@ breadcrumbContainer.innerHTML = breadcrumbHtml;
 
 
 
-
 // Cart List Rendering 
 let cartlist = JSON.parse(localStorage.getItem("cartlist")) || [];
 
