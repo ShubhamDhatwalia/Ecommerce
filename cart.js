@@ -93,18 +93,21 @@ let emptyButton = document.querySelector(".empty-btn");
 
 
 
-
-emptyButton.addEventListener("click", ()=>{
-  
+emptyButton.addEventListener("click", () => {
   localStorage.removeItem("cartlist");
-  cartlist = JSON.parse(localStorage.getItem("cartlist")) || [];
-  if (cartlist.length === 0) {
-    document.querySelector("table").style.display = "none";
-    document.querySelector(".cart-items").innerHTML = `
-      <img class="empty-cart-image" src="./assests/empty-cart.png" alt="" data-aos="zoom-in" data-aos-duration="1000">
-    `;
-  }
-})
+  cartlist = [];
+
+  cartContainer.innerHTML = "";
+
+  
+  updateTotal(0); 
+
+  document.querySelector("table").style.display = "none";
+  document.querySelector(".cart-items").innerHTML = `
+    <img class="empty-cart-image" src="./assests/empty-cart.png" alt="" data-aos="zoom-in" data-aos-duration="1000">
+  `;
+  
+});
 
 
 
@@ -171,13 +174,23 @@ function validateCouponOnSubmit() {
 function updateTotal(discountPercentage = appliedDiscount) {
   let total = 0;
 
-  document.querySelectorAll(".product-subtotal").forEach((element) => {
+  const productSubtotals = document.querySelectorAll(".product-subtotal");
+
+  if (productSubtotals.length === 0) {
+
+    cartSubtotal.textContent = `₹0.00`;
+    cartTotal.textContent = `₹0.00`;
+    delivery.textContent = "Free";
+    couponGroup.style.display = "none";
+    return;
+  }
+
+  productSubtotals.forEach((element) => {
     let subtotal = parseFloat(element.innerText.replace("₹", "")) || 0;
     total += subtotal;
   });
 
   let discount = (total > 199 && discountPercentage > 0) ? (total * discountPercentage) / 100 : 0;
-
   let deliveryCharge = total < 499 && total !== 0 ? 40 : 0;
   delivery.textContent = deliveryCharge === 0 ? "Free" : `₹${deliveryCharge}`;
 
@@ -204,7 +217,7 @@ coupon.addEventListener("submit", (e) => {
     appliedDiscount = discountPercentage;
     appliedCoupon = couponCode.value;
     updateTotal(appliedDiscount);
-    
+
     Toastify({
       text: `Coupon Added!`,
       duration: 2000,
@@ -284,5 +297,5 @@ cartlist.forEach((product, index) => {
 });
 
 
-updateTotal();
+updateTotal(appliedDiscount);
 
