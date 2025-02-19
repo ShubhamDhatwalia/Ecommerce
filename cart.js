@@ -240,6 +240,8 @@ coupon.addEventListener("submit", (e) => {
 
 
 
+
+
 // Render Cart Items
 cartlist.forEach((product, index) => {
   const cartRow = document.createElement("tr");
